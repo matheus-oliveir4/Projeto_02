@@ -17,8 +17,8 @@
                 <div class="form-group-new">
                     <div class="col-sm-12">
                         <label for="damage_id">Description</label>
-                        <select class="new-select" name="damage_id" id="damage_id" required>
-                            <option value="" selected disabled hidden>Select</option>
+                        <select class="new-select" name="damage_id" id="damage_id" onclick="selected(this.value)" >
+                
                             <option value="Não conformidades" selected>Não conformidades</option>
                             <option value="Rugas - Longitudinal"><p>Rugas - Longitudinal</p></option>
                             <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
@@ -47,9 +47,9 @@
                             <option value="Furos no laminado - Casca"><p>Furos no laminado - Casca</p></option>
                             <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
                             <option value="Ausência de camada (Preform) - LE/TE - Casca"><p>Ausência de camada (Preform) - LE/TE - Casca</p></option>
-                            @foreach ($damages as $damage)
-                                <option value="{{ $damage->id }}">{{ $damage->description }}</option>
-                            @endforeach
+                            
+        
+                            
                         </select>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <div class="col-sm-12">
                         <label for="layer_id">Layer</label>
                         <select name="layer_id" class="new-select" id="layer_id" required>
-                            <option value="" selected disabled hidden>Select</option>
+                            <option value="" selected>Select</option>
                             @foreach ($layers as $layer)
                                 <option value="{{ $layer->id }}">{{ $layer->layer }}</option>
                             @endforeach
@@ -69,7 +69,7 @@
                     <div class="col-sm-12">
                         <label for="progression">Progression</label>
                         <select name="progression" class="new-select" id="progression" required>
-                            <option value="" selected disabled hidden>Select</option>
+                            <option value="" selected>Select</option>
                             <option>New</option>
                             <option>Change</option>
                             <option>Keep</option>
@@ -95,7 +95,7 @@
                     <div class="col-sm-12">
                         <label for="severity">Severity</label>
                         <select class="new-select" name="severity" id="severity" required>
-                            <option value="" selected disabled hidden>Select</option>
+                            <option value="" selected>Select</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -109,7 +109,7 @@
                     <div class="col-sm-12">
                         <label for="recommendation_id">Recommendation</label>
                         <select class="new-select" name="recommendation_id" id="recommendation_id" required>
-                            <option value="" selected disabled hidden>Selecione</option>
+                            <option value="" selected>Selecione</option>
                             @foreach ($recommendations as $recommendation)
                                 <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
                             @endforeach
@@ -156,31 +156,30 @@
         </div>
         </div>
     </form>
-    <div class="criterio">
-        <form name="form1" method="post" class="form1">  
+    <form name="form1" method="get" class="form1">  
             <section class="SecRegiao">
                 <h3>Em qual região a ruga se encontra?</h3>
-                <input type="radio"  name="regiao" id="txtregiao" required>
+                <input type="radio"  name="regiao" id="txtregiao">
                 <label for="txtregiao"> Na área de colagem </label>
                 <br>
-                <input type="radio"  name="regiao" id="txtregiao1" required>
+                <input type="radio"  name="regiao" id="txtregiao1" >
                 <label for="txtregiao1"> Fora da area de colagem</label>
             </section>
           
             <section class="SecAltura">
                 <h3>Qual altura da ruga?</h3>
-                <input type="radio"  name="altura" id="txtaltura" required>
+                <input type="radio"  name="altura" id="txtaltura" >
                 <label for="txtaltura">Menor que 2mm </label>
                 <br>
-                <input type="radio"  name="altura" id="txtaltura1" required>
+                <input type="radio"  name="altura" id="txtaltura1" >
                 <label for="txtaltura1">Maior que 2mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
-                <input type="radio"  name="propagacao" id="txtprop" required>
+                <input type="radio"  name="propagacao" id="txtprop" >
                 <label for="txtprop">Com sinais</label>
                 <br>
-                <input type="radio"  name="propagacao" id="txtprop1" required>
+                <input type="radio"  name="propagacao" id="txtprop1" >
                 <label for="txtprop1">Sem sinais</label>
             </section>
             <section class="SecTempo">
@@ -194,27 +193,33 @@
           
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
-                <input type="radio"  name="tamanho" id="txttamanho" required>
+                <input type="radio"  name="tamanho" id="txttamanho" >
                 <label for="txttamanho"> Menor ou igual a 300mm</label>
                 <br>
-                <input type="radio"  name="tamanho" id="txttamanho1" required>
+                <input type="radio"  name="tamanho" id="txttamanho1" >
                 <label for="txttamanho1">Maior que 300mm</label>
             </section>
           
             <section class="SecLuz">
                 <h3>Existe luz passante ?</h3>
-                <input type="radio"  name="luz" id="txtluz" required>
+                <input type="radio"  name="luz" id="txtluz" >
                 <label for="txtluz">Com luz possante</label>
                 <br>
-                <input type="radio"  name="luz" id="txtluz1" required>
+                <input type="radio"  name="luz" id="txtluz1" >
                 <label for="txtluz1">Sem luz passante</label>
             </section>
       <br>
                </section>
+            </br>
+            <aside>     
+                <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
+                
+                <div id="laudo"></div>
+            </aside>
             </form>
 
-
-    </div>
+           
+  
     <script src="dados.js">
         
     </script>

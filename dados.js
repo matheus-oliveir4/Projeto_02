@@ -1,49 +1,33 @@
-const inputSection = document.getElementById('section');
-    const currentRegion = {{ Js :: from($region) }};
+function selected(value){
+    var formRugasT = document.getElementsByClassName('form1')
+    if(value =="Rugas - Transversais"){
+        formRugasT[0].style.display = 'block'
+     }
+}
+function carregar(){
+    var fregiao = document.getElementsByName('regiao')
+    var faltura = document.getElementsByName('altura')
+    var fprop = document.getElementsByName('propagacao')
+    var ftempo = document.getElementsByName('operacao')
+    var ftam = document.getElementsByName('tamanho')
+    var fluz = document.getElementsByName('luz')
+    var severity = document.getElementById('severity')
+    if(fregiao[1].checked && faltura[0].checked ){
+        severity.innerHTML = `Severidade 0` 
+     } else if(faltura[0].checked && fprop[1].checked){
+        severity.innerHTML = `Severidade 0`   
+     }else if(ftempo[0].checked && fprop[1].checked){
+        severity.innerHTML = `Severidade 1`
+     } else if(ftempo[0].checked && ftam[0].checked && fprop[0].checked ){
+        severity.innerHTML = `Severidade 2`
+     }else if(ftempo[1].checked && ftam[0].checked && fprop[0].checked){
+        severity.innerHTML = `Severidade 3`
+     } else if(fprop[0].checked && ftam[0].checked && fluz[1].checked){
+        severity.innerHTML = `Severidade 4`
+     } else if(fprop[0].checked && ftam[1].checked || fluz[0].checked){
+        severity.innerHTML = `Severidade 5`
+     }}
 
-    const regionsList = [{
-            id: 1,
-            name: 'LE'
-        },
-        {
-            id: 2,
-            name: 'TE'
-        },
-        {
-            id: 3,
-            name: 'CE'
-        },
-    ]
+ 
 
-    const regions = regionsList.filter(region => region.id != currentRegion);
-
-    const regionName = regionsList.find(region => region.id == currentRegion).name;
-
-    inputSection.innerHTML = `
-        <option value="${currentRegion}">${regionName}</option>
-        ${regions.map(region => `<option value="${region.id}">${region.name}</option>`)}
-    `;
-
-    const closeModalButton = document.querySelector("#close-modal");
-    const modal = document.querySelector("#modal");
-    const fade = document.querySelector("#fade");
-    const uidField = document.querySelector('#uid');
-
-
-    [closeModalButton, fade].forEach((el) => {
-        el.addEventListener("click", () => toggleModal());
-    });
-
-    window.onload = () => {
-        uidField.disabled = true;
-    }
-
-
-
-    document.querySelector('#progression').onchange = (e) => {
-        if (e.target.value == 'New') {
-            uidField.disabled = true;
-        } else {
-            uidField.disabled = false;
-        }
-    }
+ 
