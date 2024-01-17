@@ -1,0 +1,333 @@
+@include('pages.inspection.sidebar.styles')
+
+<style>
+    #open-modal {
+        background-color: #007bff;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    #fade,
+    #modal {
+        transition: 0.8s;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    #fade {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+    }
+
+    #modal {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        z-index: 10;
+        background-color: #fff;
+        width: 350px;
+        height: 100%;
+        margin: 0;
+        max-width: 90%;
+        padding: 2.0rem;
+        border-radius: .5rem;
+        border: 1px solid #888;
+    }
+
+    .modal_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .modal_body p {
+        margin-bottom: 0.1rem;
+    }
+
+    #modal.hide,
+    #fade.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #modal.hide {
+        right: 0;
+    }
+
+
+    .btn-box {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-box button {
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+    }
+
+    .btn-box a {
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+    }
+
+    .btn-close-link {
+        cursor: pointer;
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+        color: #000;
+        background-color: #dc3545;
+        text-align: center;
+    }
+
+    .btn-close-link:hover {
+        color: #000;
+    }
+
+    .new-select {
+        width: 100%;
+        height: 2.3rem;
+        border-radius: .5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+
+    .new-select option {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .form-group-new {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .2rem;
+    }
+
+    .form-control-new {
+        width: 100%;
+        height: 2.3rem;
+        border-radius: .5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+
+    .btn-box-new {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-box-new button {
+        border-radius: 0.5rem;
+        border: none;
+        width: 100px;
+        margin-top: 16px;
+        background-color: #2471A3;
+        color: #fff;
+    }
+
+    .modal_header-new {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0;
+        margin-top: -1rem;
+        padding-bottom: 0;
+    }
+
+    .modal_header-new h5 {
+        text-align: center;
+    }
+
+    .btn-close {
+        background-color: #C0392B !important;
+    }
+</style>
+
+<form name="createDamage">
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+        <div class="modal_header-new">
+            <h5>New Damage</h5>
+        </div>
+        <div class="modal_body">
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="damage_id">Description</label>
+                    <select class="new-select" name="damage_id" id="damage_id" required>
+                        <option value="" selected disabled hidden>Select</option>
+                        @foreach ($damages as $damage)
+                            <option value="{{ $damage->id }}">{{ $damage->description }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="layer_id">Layer</label>
+                    <select name="layer_id" class="new-select" id="layer_id" required>
+                        <option value="" selected disabled hidden>Select</option>
+                        @foreach ($layers as $layer)
+                            <option value="{{ $layer->id }}">{{ $layer->layer }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="progression">Progression</label>
+                    <select name="progression" class="new-select" id="progression" required>
+                        <option value="" selected disabled hidden>Select</option>
+                        <option>New</option>
+                        <option>Change</option>
+                        <option>Keep</option>
+                        <option>Increased</option>
+                        <option>Done</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="section">Section</label>
+                    <select name="section" class="new-select" id="section" required>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <label for="uid">Association</label>
+                <input class="form-control-new" type="numeric" name="uid" id="uid" disabled>
+                <a href="#" id="damage-picture"></a>
+            </div>
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="severity">Severity</label>
+                    <select class="new-select" name="severity" id="severity" required>
+                        <option value="" selected disabled hidden>Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="recommendation_id">Recommendation</label>
+                    <select class="new-select" name="recommendation_id" id="recommendation_id" required>
+                        <option value="" selected disabled hidden>Selecione</option>
+                        @foreach ($recommendations as $recommendation)
+                            <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="btn-box">
+                <div class="col-sm-4">
+                    <label for="location">Location (m)</label>
+                    <input class="form-control-new" type="numeric" name="location" id="location" placeholder="33.2">
+                </div>
+                <div class="col-sm-4">
+                    <label for="length">Length (mm)</label>
+                    <input class="form-control-new" type="number" name="length" id="length" placeholder="200">
+                </div>
+                <div class="col-sm-4">
+                    <label for="width">Width (mm)</label>
+                    <input class="form-control-new" type="number" name="width" id="width" placeholder="300">
+                </div>
+            </div>
+            {{-- INPUTS HIDDEN --}}
+            {{-- <input type="hidden" name="section" value="{{ $region }}"> --}}
+            <input type="hidden" name="windblade_id" value="{{ $blade->windblade_id ?? 0 }}">
+            <input type="hidden" name="workorder_id" value="{{ $blade->workorder_id ?? 0 }}">
+            <input type="hidden" name="gallery_id" id="gallery_id">
+            <input type="hidden" name="image_url" id="image_url">
+            <input type="hidden" name="positions" id="positions">
+            <input type="hidden" name="method" id="method">
+            {{-- INPUTS HIDDEN --}}
+            <div class="form-group-new">
+                <div class="col-sm-12">
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" class="form-control-new" id="comment" placeholder="Comment"></textarea>
+                </div>
+            </div>
+
+            <div class="btn-box-new">
+                <button id="btn-submit" type="submit">Save</button>
+                <a class="btn-close-link" id="close-modal">Close</a>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+
+<script>
+    const inputSection = document.getElementById('section');
+    const currentRegion = {{ Js::from($region) }};
+
+    const regionsList = [{
+            id: 1,
+            name: 'LE'
+        },
+        {
+            id: 2,
+            name: 'TE'
+        },
+        {
+            id: 3,
+            name: 'CE'
+        },
+    ]
+
+    const regions = regionsList.filter(region => region.id != currentRegion);
+
+    const regionName = regionsList.find(region => region.id == currentRegion).name;
+
+    inputSection.innerHTML = `
+        <option value="${currentRegion}">${regionName}</option>
+        ${regions.map(region => `<option value="${region.id}">${region.name}</option>`)}
+    `;
+</script>
+
+
+
+<script>
+    const closeModalButton = document.querySelector("#close-modal");
+    const modal = document.querySelector("#modal");
+    const fade = document.querySelector("#fade");
+    const uidField = document.querySelector('#uid');
+
+
+    [closeModalButton, fade].forEach((el) => {
+        el.addEventListener("click", () => toggleModal());
+    });
+
+    window.onload = () => {
+        uidField.disabled = true;
+    }
+
+
+
+    document.querySelector('#progression').onchange = (e) => {
+        if (e.target.value == 'New') {
+            uidField.disabled = true;
+        } else {
+            uidField.disabled = false;
+        }
+    }
+</script>

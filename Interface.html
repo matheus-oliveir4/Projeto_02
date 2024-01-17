@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwind-Critérios</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <form name="createDamage">
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+            <div class="modal_header-new">
+                <h5>New Damage</h5>
+            </div>
+            <div class="modal_body">
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="damage_id">Description</label>
+                        <select class="new-select" name="damage_id" id="damage_id" required>
+                            <option value="" selected disabled hidden>Select</option>
+                            <option value="Não conformidades" selected>Não conformidades</option>
+                            <option value="Rugas - Longitudinal"><p>Rugas - Longitudinal</p></option>
+                            <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
+                            <option value="Rugas - Almas"><p>Rugas - Almas</p></option>
+                            <option value="Gap ou Ausência de Core - Cascas e Almas"><p>Gap ou Ausência de Core - Cascas e Almas</p></option>
+                            <option value="Degrau - Cascas"><p>Degrau - Cascas</p></option>
+                            <option value="Tecido Seco na superfície - Cascas"><p>Tecido Seco na superfície - Cascas</p></option>
+                            <option value="Tecido Semi-Seco - Cascas e Almas"><p>Tecido Semi-Seco - Cascas e Almas</p></option>
+                            <option value="Bolhas - Casca"><p>Bolhas - Casca</p></option>
+                            <option value="Corpo Estranho - Cascas e área de colagem (para laminados infudidos ou áreas de colagem)"><p>Corpo Estranho - Cascas e área de colagem (para laminados infudidos ou áreas de colagem)</p></option>
+                            <option value="Trincas transversais - Cascas e Almas"><p>Trincas transversais - Cascas e Almas</p></option>
+                            <option value="Trincas Longitudinais - Cascas e Almas"><p>Trincas Longitudinais - Cascas e Almas</p></option>
+                            <option value="Trincas Transversais - linhas de colagem"><p>Trincas Transversais - linhas de colagem</p></option>
+                            <option value="Trincas Longitudinais - linhas de colagem"><p>Trincas Longitudinais - linhas de colagem</p></option>
+                            <option value="Descolamentos  - Danos na alma/T-pultrudado"><p>Descolamentos  - Danos na alma/T-pultrudado</p></option>
+                            <option value="Trincas - Inserto do BF"><p>Trincas - Inserto do BF</p></option>
+                            <option value="Linhas de colagem - BA/BF"><p>Linhas de colagem - BA/BF</p></option>
+                            <option value="Vazio área de colagem ou Squeeze Out Pobre -Almas"><p>Vazio área de colagem ou Squeeze Out Pobre -Almas</p></option>
+                            <option value="Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	"><p>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	</p></option>
+                            <option value="Materiais soltos em geral - Interno da pá"><p>Materiais soltos em geral - Interno da pá</p></option>
+                            <option value="Delaminações - Cascas e Almas"><p>Delaminações - Cascas e Almas</p></option>
+                            <option value="Delaminações - T-pultrudado	"><p>Delaminações - T-pultrudado</p></option>
+                            <option value="LPS/LCTU - Root Chamber"><p>LPS/LCTU - Root Chamber	</p></option>
+                            <option value="Danos ocasionados por raios/queimados/Flashover"><p>Danos ocasionados por raios/queimados/Flashover</p></option>
+                            <option value="Camada rompida devido lixamento ou remocao de nylon"><p>Camada rompida devido lixamento ou remoção de nylon</p></option>
+                            <option value="Furos no laminado - Casca"><p>Furos no laminado - Casca</p></option>
+                            <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
+                            <option value="Ausência de camada (Preform) - LE/TE - Casca"><p>Ausência de camada (Preform) - LE/TE - Casca</p></option>
+                            @foreach ($damages as $damage)
+                                <option value="{{ $damage->id }}">{{ $damage->description }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="layer_id">Layer</label>
+                        <select name="layer_id" class="new-select" id="layer_id" required>
+                            <option value="" selected disabled hidden>Select</option>
+                            @foreach ($layers as $layer)
+                                <option value="{{ $layer->id }}">{{ $layer->layer }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="progression">Progression</label>
+                        <select name="progression" class="new-select" id="progression" required>
+                            <option value="" selected disabled hidden>Select</option>
+                            <option>New</option>
+                            <option>Change</option>
+                            <option>Keep</option>
+                            <option>Increased</option>
+                            <option>Done</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="section">Section</label>
+                        <select name="section" class="new-select" id="section" required>
+    
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <label for="uid">Association</label>
+                    <input class="form-control-new" type="numeric" name="uid" id="uid" disabled>
+                    <a href="#" id="damage-picture"></a>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="severity">Severity</label>
+                        <select class="new-select" name="severity" id="severity" required>
+                            <option value="" selected disabled hidden>Select</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="recommendation_id">Recommendation</label>
+                        <select class="new-select" name="recommendation_id" id="recommendation_id" required>
+                            <option value="" selected disabled hidden>Selecione</option>
+                            @foreach ($recommendations as $recommendation)
+                                <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <div class="col-sm-4">
+                        <label for="location">Location (m)</label>
+                        <input class="form-control-new" type="numeric" name="location" id="location" placeholder="33.2">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="length">Length (mm)</label>
+                        <input class="form-control-new" type="number" name="length" id="length" placeholder="200">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="width">Width (mm)</label>
+                        <input class="form-control-new" type="number" name="width" id="width" placeholder="300">
+                    </div>
+                </div>
+                {{-- INPUTS HIDDEN --}}
+                {{-- <input type="hidden" name="section" value="{{ $region }}"> --}}
+                <input type="hidden" name="windblade_id" value="{{ $blade->windblade_id ?? 0 }}">
+                <input type="hidden" name="workorder_id" value="{{ $blade->workorder_id ?? 0 }}">
+                <input type="hidden" name="gallery_id" id="gallery_id">
+                <input type="hidden" name="image_url" id="image_url">
+                <input type="hidden" name="positions" id="positions">
+                <input type="hidden" name="method" id="method">
+                {{-- INPUTS HIDDEN --}}
+                <div class="form-group-new">
+                    <div class="col-sm-12">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" class="form-control-new" id="comment" placeholder="Comment"></textarea>
+                    </div>
+                </div>
+    
+                <div class="btn-box-new">
+                    <button id="btn-submit" type="submit">Save</button>
+                    <a class="btn-close-link" id="close-modal">Close</a>
+    
+    
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    <div class="criterio">
+        <form name="form1" method="post" class="form1">  
+            <section class="SecRegiao">
+                <h3>Em qual região a ruga se encontra?</h3>
+                <input type="radio"  name="regiao" id="txtregiao" required>
+                <label for="txtregiao"> Na área de colagem </label>
+                <br>
+                <input type="radio"  name="regiao" id="txtregiao1" required>
+                <label for="txtregiao1"> Fora da area de colagem</label>
+            </section>
+          
+            <section class="SecAltura">
+                <h3>Qual altura da ruga?</h3>
+                <input type="radio"  name="altura" id="txtaltura" required>
+                <label for="txtaltura">Menor que 2mm </label>
+                <br>
+                <input type="radio"  name="altura" id="txtaltura1" required>
+                <label for="txtaltura1">Maior que 2mm</label>
+            </section>
+            <section class="SecSinais">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao" id="txtprop" required>
+                <label for="txtprop">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao" id="txtprop1" required>
+                <label for="txtprop1">Sem sinais</label>
+            </section>
+            <section class="SecTempo">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao" id="txttempo">
+                <label for="txttempo">Maior que 1 ano</label>
+                <br>
+                <input type="radio"  name="operacao" id="txttempo1">
+                <label for="txttempo1">Menor que 1 ano</label>
+            </section>
+          
+            <section class="SecTamanho">
+                <h3>Qual o tamanho da ruga</h3>
+                <input type="radio"  name="tamanho" id="txttamanho" required>
+                <label for="txttamanho"> Menor ou igual a 300mm</label>
+                <br>
+                <input type="radio"  name="tamanho" id="txttamanho1" required>
+                <label for="txttamanho1">Maior que 300mm</label>
+            </section>
+          
+            <section class="SecLuz">
+                <h3>Existe luz passante ?</h3>
+                <input type="radio"  name="luz" id="txtluz" required>
+                <label for="txtluz">Com luz possante</label>
+                <br>
+                <input type="radio"  name="luz" id="txtluz1" required>
+                <label for="txtluz1">Sem luz passante</label>
+            </section>
+      <br>
+               </section>
+            </form>
+
+
+    </div>
+    <script src="dados.js">
+        
+    </script>
+</body>
+</html>

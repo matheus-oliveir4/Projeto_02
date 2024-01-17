@@ -1,0 +1,171 @@
+
+    #open-modal {
+        background-color: #007bff;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    #fade,
+    #modal {
+        transition: 0.8s;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    #fade {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+    }
+
+    #modal {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        z-index: 10;
+        background-color: #beb8b8;
+        width: 350px;
+        height: 100%;
+        margin: 0;
+        max-width: 90%;
+        padding: 2.0rem;
+        border-radius: .5rem;
+        border: 1px solid #888;
+    }
+
+    .modal_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .modal_body p {
+        margin-bottom: 0.1rem;
+    }
+
+ 
+    #fade.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #modal.hide {
+        right: 0;
+    }
+
+
+    .btn-box {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-box button {
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+    }
+
+    .btn-box a {
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+    }
+
+    .btn-close-link {
+        cursor: pointer;
+        border-radius: 1rem;
+        width: 100px;
+        margin-top: 16px;
+        color: #000;
+        background-color: #dc3545;
+        text-align: center;
+    }
+
+    .btn-close-link:hover {
+        color: #000;
+    }
+
+    .new-select {
+        width: 100%;
+        height: 2.3rem;
+        border-radius: .5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+
+    .new-select option {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .form-group-new {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .2rem;
+    }
+
+    .form-control-new {
+        width: 100%;
+        height: 2.3rem;
+        border-radius: .5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+
+    .btn-box-new {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-box-new button {
+        border-radius: 0.5rem;
+        border: none;
+        width: 100px;
+        margin-top: 16px;
+        background-color: #2471A3;
+        color: #fff;
+    }
+
+    .modal_header-new {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0;
+        margin-top: -1rem;
+        padding-bottom: 0;
+    }
+
+    .modal_header-new h5 {
+        text-align: center;
+    }
+
+    .btn-close {
+        background-color: #C0392B !important;
+    }
+    .criterio{
+        display: flex;
+    }
+    .form1{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0%;
+        right: 25.5%;
+        z-index: 10;
+        background-color: #beb8b8;
+        width: 350px;
+        height: 100%;
+        margin: 0;
+        max-width: 90%;
+        padding: 2.0rem;
+        border-radius: .5rem;
+        border: 1px solid #888;
+    }
