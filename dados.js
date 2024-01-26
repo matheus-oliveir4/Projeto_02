@@ -13,7 +13,7 @@ function carregar(){
    var indiceOpition3 = 3; /*sev2*/
    var indiceOpition4 = 4; /*sev3*/
    var indiceOpition5 = 5; /*sev4*/
-   var indiceOpition6 = 6; /*sev6*/
+   var indiceOpition6 = 6; /*sev5*/
    
 
 
