@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <form name="createDamage">
+    <form name="createDamage" id="createDamage">
         <div id="fade" class="hide"></div>
         <div id="modal" class="hide">
             <div class="modal_header-new">
@@ -78,7 +78,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group-new">
+                <div class="form-group-new" name="form-group-new">
                     <div class="col-sm-12">
                         <label for="section">Section</label>
                         <select name="section" class="new-select" id="section" required>
@@ -92,10 +92,11 @@
                     <a href="#" id="damage-picture"></a>
                 </div>
                 <div class="form-group-new">
-                    <div class="col-sm-12">
-                        <label for="severity">Severity</label>
-                        <select class="new-select" name="severity" id="severity" required>
-                            <option value="" selected>Select</option>
+                    <div class="col-sm-12" name="col-sm-12">
+                        <label for="severity">Severity <br></label>
+    
+                       <select class="new-select" name="severity" id="severity" required>
+                            <option selected>Severity</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -204,7 +205,7 @@
                </section>
             </br>
             <aside>     
-                <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
+                <input type="button" id="analise" value="Analisar" onclick="carregar()">
                 
                 <div id="laudo"></div>
             </aside>
