@@ -47,6 +47,7 @@
                             <option value="Furos no laminado - Casca"><p>Furos no laminado - Casca</p></option>
                             <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
                             <option value="Ausência de camada (Preform) - LE/TE - Casca"><p>Ausência de camada (Preform) - LE/TE - Casca</p></option>
+                            <option value="Camada contaminada"><p>Camada contaminada</p></option>
                             
         
                             
@@ -157,48 +158,48 @@
         </div>
         </div>
     </form>
-    <form name="form1" method="phost" class="form1"> 
+    <form name="form1" method="phost" class="form"> 
           
-            <section class="SecAltura">
+            <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
                 <input type="radio"  name="altura" id="txtaltura" class="grupo" >
                 <label for="txtaltura">Menor que 2mm </label>
                 <br>
-                <input type="radio"  name="altura" id="txtaltura1" >
+                <input type="radio"  name="altura" id="txtaltura1" class="grupo">
                 <label for="txtaltura1">Maior que 2mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
-                <input type="radio"  name="propagacao" id="txtprop" >
+                <input type="radio"  name="propagacao" id="txtprop" class="grupo">
                 <label for="txtprop">Com sinais</label>
                 <br>
-                <input type="radio"  name="propagacao" id="txtprop1" >
+                <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
                 <label for="txtprop1">Sem sinais</label>
             </section>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao" id="txttempo">
+                <input type="radio"  name="operacao" id="txttempo" class="grupo">
                 <label for="txttempo">Maior que 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao" id="txttempo1">
+                <input type="radio"  name="operacao" id="txttempo1" class="grupo">
                 <label for="txttempo1">Menor que 1 ano</label>
             </section>
           
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
-                <input type="radio"  name="tamanho" id="txttamanho" >
+                <input type="radio"  name="tamanho" id="txttamanho" class="grupo">
                 <label for="txttamanho"> Menor ou igual a 300mm</label>
                 <br>
-                <input type="radio"  name="tamanho" id="txttamanho1" >
+                <input type="radio"  name="tamanho" id="txttamanho1" class="grupo">
                 <label for="txttamanho1">Maior que 300mm</label>
             </section>
           
             <section class="SecLuz">
                 <h3>Existe luz passante ?</h3>
-                <input type="radio"  name="luz" id="txtluz" >
+                <input type="radio"  name="luz" id="txtluz" class="grupo">
                 <label for="txtluz">Com luz possante</label>
                 <br>
-                <input type="radio"  name="luz" id="txtluz1" >
+                <input type="radio"  name="luz" id="txtluz1" class="grupo">
                 <label for="txtluz1">Sem luz passante</label>
             </section>
       <br>
@@ -206,11 +207,53 @@
             </br>
             <aside>     
                 <input type="button" id="analise" value="Analisar" onclick="carregar()">
-                
-                <div id="laudo"></div>
             </aside>
             </form>
+            <form name="form2" method="phost" class="form">
+                <section class="SecTempo">
+                    <h3>Qual tempo de operação da pá?</h3>
+                    <input type="radio"  name="operacao" id="txttempo" class="grupo">
+                    <label for="txttempo">Maior que 1 ano</label>
+                    <br>
+                    <input type="radio"  name="operacao" id="txttempo1" class="grupo">
+                    <label for="txttempo1">Menor que 1 ano</label>
+                </section>
 
+                <section class="SecSinais">
+                    <h3>Existem  sinais de trincas ou delaminações?</h3>
+                    <input type="radio"  name="propagacao" id="txtprop" class="grupo">
+                    <label for="txtprop">Com sinais</label>
+                    <br>
+                    <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
+                    <label for="txtprop1">Sem sinais</label>
+                    <aside>     
+                        <input type="button" id="analise" value="Analisar" onclick="carregar1()">
+                    </aside>
+                    </section>
+            </form>
+
+        <form name="form3" method="phost" class="form">
+            <section class="SecTempo">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao" id="txttempo" class="grupo">
+                <label for="txttempo">Maior que 1 ano</label>
+                <br>
+                <input type="radio"  name="operacao" id="txttempo1" class="grupo">
+                <label for="txttempo1">Menor que 1 ano</label>
+            </section>
+
+            <section class="SecSinais">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao" id="txtprop" class="grupo">
+                <label for="txtprop">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
+                <label for="txtprop1">Sem sinais</label>
+                <aside>     
+                    <input type="button" id="analise" value="Analisar" onclick="carregar2()">
+                </aside>
+                </section>
+        </form>
            
   
     <script src="dados.js">
