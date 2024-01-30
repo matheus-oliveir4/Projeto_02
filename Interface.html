@@ -111,7 +111,7 @@
                     <div class="col-sm-12">
                         <label for="recommendation_id">Recommendation</label>
                         <select class="new-select" name="recommendation_id" id="recommendation_id" required>
-                            <option value="" selected>Selecione</option>
+                            <option value="" selecte d>Selecione</option>
                             @foreach ($recommendations as $recommendation)
                                 <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
                             @endforeach
@@ -158,48 +158,48 @@
         </div>
         </div>
     </form>
-    <form name="form1" method="phost" class="form"> 
+    <form name="form1RugasT" method="phost" class="form"> 
           
             <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
-                <input type="radio"  name="altura" id="txtaltura" class="grupo" >
+                <input type="radio"  name="altura"  class="grupo" >
                 <label for="txtaltura">Menor que 2mm </label>
                 <br>
-                <input type="radio"  name="altura" id="txtaltura1" class="grupo">
+                <input type="radio"  name="altura"  class="grupo">
                 <label for="txtaltura1">Maior que 2mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
-                <input type="radio"  name="propagacao" id="txtprop" class="grupo">
+                <input type="radio"  name="propagacao"  class="grupo">
                 <label for="txtprop">Com sinais</label>
                 <br>
-                <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
+                <input type="radio"  name="propagacao"  class="grupo">
                 <label for="txtprop1">Sem sinais</label>
             </section>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao" id="txttempo" class="grupo">
+                <input type="radio"  name="operacao"  class="grupo">
                 <label for="txttempo">Maior que 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao" id="txttempo1" class="grupo">
+                <input type="radio"  name="operacao" class="grupo">
                 <label for="txttempo1">Menor que 1 ano</label>
             </section>
           
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
-                <input type="radio"  name="tamanho" id="txttamanho" class="grupo">
+                <input type="radio"  name="tamanho"  class="grupo">
                 <label for="txttamanho"> Menor ou igual a 300mm</label>
                 <br>
-                <input type="radio"  name="tamanho" id="txttamanho1" class="grupo">
+                <input type="radio"  name="tamanho"  class="grupo">
                 <label for="txttamanho1">Maior que 300mm</label>
             </section>
           
             <section class="SecLuz">
                 <h3>Existe luz passante ?</h3>
-                <input type="radio"  name="luz" id="txtluz" class="grupo">
+                <input type="radio"  name="luz" class="grupo">
                 <label for="txtluz">Com luz possante</label>
                 <br>
-                <input type="radio"  name="luz" id="txtluz1" class="grupo">
+                <input type="radio"  name="luz" class="grupo">
                 <label for="txtluz1">Sem luz passante</label>
             </section>
       <br>
@@ -209,22 +209,22 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar()">
             </aside>
             </form>
-            <form name="form2" method="phost" class="form">
+            <form name="formAusencia" method="phost" class="form">
                 <section class="SecTempo">
                     <h3>Qual tempo de operação da pá?</h3>
-                    <input type="radio"  name="operacao" id="txttempo" class="grupo">
+                    <input type="radio"  name="operacao1"  class="grupo">
                     <label for="txttempo">Maior que 1 ano</label>
                     <br>
-                    <input type="radio"  name="operacao" id="txttempo1" class="grupo">
+                    <input type="radio"  name="operacao1"  class="grupo">
                     <label for="txttempo1">Menor que 1 ano</label>
                 </section>
 
                 <section class="SecSinais">
                     <h3>Existem  sinais de trincas ou delaminações?</h3>
-                    <input type="radio"  name="propagacao" id="txtprop" class="grupo">
+                    <input type="radio"  name="propagacao1"  class="grupo">
                     <label for="txtprop">Com sinais</label>
                     <br>
-                    <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
+                    <input type="radio"  name="propagacao1" class="grupo">
                     <label for="txtprop1">Sem sinais</label>
                     <aside>     
                         <input type="button" id="analise" value="Analisar" onclick="carregar1()">
@@ -232,28 +232,176 @@
                     </section>
             </form>
 
-        <form name="form3" method="phost" class="form">
+        <form name="camadaCont" method="phost" class="form">
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao" id="txttempo" class="grupo">
+                <input type="radio"  name="operacao2" class="grupo">
                 <label for="txttempo">Maior que 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao" id="txttempo1" class="grupo">
+                <input type="radio"  name="operacao2" id="txttempo1" class="grupo">
                 <label for="txttempo1">Menor que 1 ano</label>
             </section>
 
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
-                <input type="radio"  name="propagacao" id="txtprop" class="grupo">
+                <input type="radio"  name="propagacao2" class="grupo">
                 <label for="txtprop">Com sinais</label>
                 <br>
-                <input type="radio"  name="propagacao" id="txtprop1" class="grupo">
+                <input type="radio"  name="propagacao2"  class="grupo">
                 <label for="txtprop1">Sem sinais</label>
                 <aside>     
                     <input type="button" id="analise" value="Analisar" onclick="carregar2()">
                 </aside>
                 </section>
         </form>
+        <form name="formRugasL" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar3()">
+            </aside>
+        </form>
+
+        <form name="formRugasAlma" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar4()">
+            </aside>
+        </form>
+
+        <form name="formGapAusCore" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar5()">
+            </aside>
+        </form>
+
+        <form name="formDegrauC" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar6()">
+            </aside>
+        </form>
+        <form name="formTecSuperC" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar7()">
+            </aside>
+        </form>
+
+        <form name="formSemiSec" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar8()">
+            </aside>
+        </form>
+
+        <form name="formBolhasC" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar9()">
+            </aside>
+        </form>
+        <form name="formCpCascaECol" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar10()">
+            </aside>
+        </form>
+        <form name="formTrincasTrans" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar11()">
+            </aside>
+        </form>
+        <form name="formTrincasLong" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar13()">
+            </aside>
+        </form>
+        <form name="formTrincasTransCol" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar14()">
+            </aside>
+        </form>
+        <form name="formTrincasLongCol" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar15()">
+            </aside>
+        </form>
+        <form name="formDescola" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar16()">
+            </aside>
+        </form>
+        <form name="formTrincasInsBf" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar17()">
+            </aside>
+        </form>
+        <form name="formLinhasDeColBABF" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar18()">
+            </aside>
+        </form>
+        <form name="formVazioAreaColSque" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar19()">
+            </aside>
+        </form>
+        <form name="formVazioColPestBABF" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar20()">
+            </aside>
+        </form>
+        <form name="formMateriaisSoltos" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar21()">
+            </aside>
+        </form>
+        <form name="formDelamCA" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar22()">
+            </aside>
+        </form>
+        <form name="formDelamTpul" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar23()">
+            </aside>
+        </form>
+        <form name="formLPSLCTU" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar24()">
+            </aside>
+        </form>
+
+        <form name="formDanosRaios" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar25()">
+            </aside>
+        </form>
+
+        <form name="formCamadaRomp" method="phost" class="form">
+
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar26()">
+            </aside>
+        </form>
+
+
+        
            
   
     <script src="dados.js">
