@@ -37,10 +37,10 @@
                             <option value="Trincas - Inserto do BF"><p>Trincas - Inserto do BF</p></option>
                             <option value="Linhas de colagem - BA/BF"><p>Linhas de colagem - BA/BF</p></option>
                             <option value="Vazio área de colagem ou Squeeze Out Pobre -Almas"><p>Vazio área de colagem ou Squeeze Out Pobre -Almas</p></option>
-                            <option value="Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	"><p>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	</p></option>
+                            <option value="Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz"><p>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	</p></option>
                             <option value="Materiais soltos em geral - Interno da pá"><p>Materiais soltos em geral - Interno da pá</p></option>
                             <option value="Delaminações - Cascas e Almas"><p>Delaminações - Cascas e Almas</p></option>
-                            <option value="Delaminações - T-pultrudado	"><p>Delaminações - T-pultrudado</p></option>
+                            <option value="Delaminações - T-pultrudado"><p>Delaminações - T-pultrudado</p></option>
                             <option value="LPS/LCTU - Root Chamber"><p>LPS/LCTU - Root Chamber	</p></option>
                             <option value="Danos ocasionados por raios/queimados/Flashover"><p>Danos ocasionados por raios/queimados/Flashover</p></option>
                             <option value="Camada rompida devido lixamento ou remocao de nylon"><p>Camada rompida devido lixamento ou remoção de nylon</p></option>
@@ -158,7 +158,14 @@
         </div>
         </div>
     </form>
-    <form name="form1RugasT" method="phost" class="form"> 
+        <form name="formRugasL" method="phost" class="form">
+            <h3>Rugas - Longitudinal</h3>
+        <aside>     
+            <input type="button" id="analise" value="Analisar" onclick="carregar0()">
+        </aside>
+        </form>
+    <form name="form1RugasT" id="form1RugasT"method="phost" class="form"> 
+        <h3>Rugas - Transversais</h3>
           
             <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
@@ -206,33 +213,188 @@
                </section>
             </br>
             <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar()">
+                <input type="button" id="analise" value="Analisar" onclick="carregar1()">
             </aside>
             </form>
-            <form name="formAusencia" method="phost" class="form">
-                <section class="SecTempo">
-                    <h3>Qual tempo de operação da pá?</h3>
-                    <input type="radio"  name="operacao1"  class="grupo">
-                    <label for="txttempo">Maior que 1 ano</label>
-                    <br>
-                    <input type="radio"  name="operacao1"  class="grupo">
-                    <label for="txttempo1">Menor que 1 ano</label>
-                </section>
+        <form name="formRugasAlma" method="phost" class="form">
+            <h3>Rugas - Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar2()">
+            </aside>
+        </form>
 
-                <section class="SecSinais">
-                    <h3>Existem  sinais de trincas ou delaminações?</h3>
-                    <input type="radio"  name="propagacao1"  class="grupo">
-                    <label for="txtprop">Com sinais</label>
-                    <br>
-                    <input type="radio"  name="propagacao1" class="grupo">
-                    <label for="txtprop1">Sem sinais</label>
-                    <aside>     
-                        <input type="button" id="analise" value="Analisar" onclick="carregar1()">
-                    </aside>
-                    </section>
-            </form>
+        <form name="formGapAusCore" method="phost" class="form">
+            <h3>Gap ou Ausência de Core - Cascas e Almas</h3>    
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar3()">
+            </aside>
+        </form>
+
+        <form name="formDegrauC" method="phost" class="form">
+            <h3>Degrau - Cascas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar4()">
+            </aside>
+        </form>
+        <form name="formTecSuperC" method="phost" class="form">
+            <h3>Tecido Seco na superfície - Cascas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar5()">
+            </aside>
+        </form>
+
+        <form name="formSemiSec" method="phost" class="form">
+            <h3>Tecido Semi-Seco - Cascas e Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar6()">
+            </aside>
+        </form>
+
+        <form name="formBolhasC" method="phost" class="form">
+            <h3>Bolhas - Casca</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar7()">
+            </aside>
+        </form>
+        <form name="formCpCascaECol" method="phost" class="form">
+            <h3>Corpo Estranho</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar8()">
+            </aside>
+        </form>
+        <form name="formTrincasTrans" method="phost" class="form">
+            <h3>Trincas transversais - Cascas e Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar9()">
+            </aside>
+        </form>
+        <form name="formTrincasLong" method="phost" class="form">
+            <h3>Trincas Longitudinais - Cascas e Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar10()">
+            </aside>
+        </form>
+        <form name="formTrincasTransCol" method="phost" class="form">
+            <h3>Trincas Transversais - linhas de colagem</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar11()">
+            </aside>
+        </form>
+        <form name="formTrincasLongCol" method="phost" class="form">
+            <h3>Trincas Longitudinais - linhas de colagem</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar12()">
+            </aside>
+        </form>
+        <form name="formDescola" method="phost" class="form">
+            <h3>Descolamentos  - Danos na alma/T-pultrudado</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar13()">
+            </aside>
+        </form>
+        <form name="formTrincasInsBf" method="phost" class="form">
+            <h3>Trincas - Inserto do BF</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar14()">
+            </aside>
+        </form>
+        <form name="formLinhasDeColBABF" method="phost" class="form">
+            <h3>Linhas de colagem - BA/BF</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar15()">
+            </aside>
+        </form>
+        <form name="formVazioAreaColSque" method="phost" class="form">
+            <h3>Vazio área de colagem ou Squeeze Out Pobre -Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar16()">
+            </aside>
+        </form>
+        <form name="formVazioColPestBABF" method="phost" class="form">
+            <h3>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar17()">
+            </aside>
+        </form>
+        <form name="formMateriaisSoltos" method="phost" class="form">
+            <h3>Materiais soltos em geral - Interno da pá</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar18()">
+            </aside>
+        </form>
+        <form name="formDelamCA" method="phost" class="form">
+            <h3>Delaminações - Cascas e Almas</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar19()">
+            </aside>
+        </form>
+        <form name="formDelamTpul" method="phost" class="form">
+            <h3>Delaminações - T-pultrudado</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar20()">
+            </aside>
+        </form>
+        <form name="formLPSLCTU" method="phost" class="form">
+            <h3>LPS/LCTU - Root Chamber</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar21()">
+            </aside>
+        </form>
+
+        <form name="formDanosRaios" method="phost" class="form">
+            <h3>Danos ocasionados por raios/queimados/Flashover</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar22()">
+            </aside>
+        </form>
+
+        <form name="formCamadaRomp" method="phost" class="form">
+            <h3>Camada rompida devido lixamento ou remocao de nylon</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar23()">
+            </aside>
+        </form>
+
+        <form name="formFurosLamC" method="phost" class="form">
+            <h3>Furos no laminado - Casca</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar24()">
+            </aside>
+        </form>
+
+        <form name="formFurosLamBF" method="phost" class="form">
+            <h3>Furos - Inserto do BF</h3>
+            <aside>     
+                <input type="button" id="analise" value="Analisar" onclick="carregar25()">
+            </aside>
+        </form>
+
+        <form name="formAusencia" method="phost" class="form">
+            <h3>Ausência de camada (Preform) - LE/TE - Casca</h3>
+            <section class="SecTempo">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao1"  class="grupo">
+                <label for="txttempo">Maior que 1 ano</label>
+                <br>
+                <input type="radio"  name="operacao1"  class="grupo">
+                <label for="txttempo1">Menor que 1 ano</label>
+            </section>
+
+            <section class="SecSinais">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao1"  class="grupo">
+                <label for="txtprop">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao1" class="grupo">
+                <label for="txtprop1">Sem sinais</label>
+                <aside>     
+                    <input type="button" id="analise" value="Analisar" onclick="carregar26()">
+                </aside>
+                </section>
+        </form>
 
         <form name="camadaCont" method="phost" class="form">
+            <h3>Camada contaminada</h3>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao2" class="grupo">
@@ -250,154 +412,9 @@
                 <input type="radio"  name="propagacao2"  class="grupo">
                 <label for="txtprop1">Sem sinais</label>
                 <aside>     
-                    <input type="button" id="analise" value="Analisar" onclick="carregar2()">
+                    <input type="button" id="analise" value="Analisar" onclick="carregar27()">
                 </aside>
                 </section>
-        </form>
-        <form name="formRugasL" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar3()">
-            </aside>
-        </form>
-
-        <form name="formRugasAlma" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar4()">
-            </aside>
-        </form>
-
-        <form name="formGapAusCore" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar5()">
-            </aside>
-        </form>
-
-        <form name="formDegrauC" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar6()">
-            </aside>
-        </form>
-        <form name="formTecSuperC" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar7()">
-            </aside>
-        </form>
-
-        <form name="formSemiSec" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar8()">
-            </aside>
-        </form>
-
-        <form name="formBolhasC" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar9()">
-            </aside>
-        </form>
-        <form name="formCpCascaECol" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar10()">
-            </aside>
-        </form>
-        <form name="formTrincasTrans" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar11()">
-            </aside>
-        </form>
-        <form name="formTrincasLong" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar13()">
-            </aside>
-        </form>
-        <form name="formTrincasTransCol" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar14()">
-            </aside>
-        </form>
-        <form name="formTrincasLongCol" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar15()">
-            </aside>
-        </form>
-        <form name="formDescola" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar16()">
-            </aside>
-        </form>
-        <form name="formTrincasInsBf" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar17()">
-            </aside>
-        </form>
-        <form name="formLinhasDeColBABF" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar18()">
-            </aside>
-        </form>
-        <form name="formVazioAreaColSque" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar19()">
-            </aside>
-        </form>
-        <form name="formVazioColPestBABF" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar20()">
-            </aside>
-        </form>
-        <form name="formMateriaisSoltos" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar21()">
-            </aside>
-        </form>
-        <form name="formDelamCA" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar22()">
-            </aside>
-        </form>
-        <form name="formDelamTpul" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar23()">
-            </aside>
-        </form>
-        <form name="formLPSLCTU" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar24()">
-            </aside>
-        </form>
-
-        <form name="formDanosRaios" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar25()">
-            </aside>
-        </form>
-
-        <form name="formCamadaRomp" method="phost" class="form">
-
-            <aside>     
-                <input type="button" id="analise" value="Analisar" onclick="carregar26()">
-            </aside>
         </form>
 
 
