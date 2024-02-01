@@ -913,16 +913,31 @@ function selected(value){
       formAusencia[0].style.display = 'none'
       camadaCont[0].style.display = 'block'
       selected.selectedIndex = -1; 
-     }
+     }}
     
      
-    
-    
-    
-    
-    
-    
+  /*Condicionais para Rugas - Longitudinal*/
+  function carregar0(){
+    var faltura1 = document.getElementsByName('altura1')
+    var fprop1 = document.getElementsByName('propagacao3')
+    var ftempo1 = document.getElementsByName('operacao3')
+    var ftam1 = document.getElementsByName('tamanho1')
+    var fluz1 = document.getElementsByName('luz1')
+
+    if(faltura1[0].checked && fprop1[1].checked){
+      selectElement.selectedIndex = indiceOpition1
+     }else if(ftempo1[0].checked && fprop1[1].checked){
+      selectElement.selectedIndex = indiceOpition2
+     } else if(ftempo1[0].checked && ftam1[0].checked && fprop1[0].checked ){
+      selectElement.selectedIndex = indiceOpition3
+     }else if(ftempo1[1].checked && ftam1[0].checked && fprop1[0].checked){
+      selectElement.selectedIndex = indiceOpition4
+     } else if(fprop1[0].checked && ftam1[0].checked && fluz1[1].checked){
+      selectElement.selectedIndex = indiceOpition5
+     } else if(fprop1[0].checked && ftam1[1].checked || fluz1[0].checked){
+      selectElement.selectedIndex = indiceOpition6}
     }
+
  /*Condicionais para rugas  Transversais*/     
 function carregar1(){
   var faltura = document.getElementsByName('altura')
@@ -956,6 +971,7 @@ function carregar26(){
   }
 
 /*Condicionais para Rugas - Longitudinal*/
+
 /*Condicionais para rugas  Transversais*/
 /*Condicionais para Rugas - Almas*/
 /*Condicionais para Gap ou Ausência de Core - Cascas e Almas*/

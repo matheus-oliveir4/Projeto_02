@@ -160,6 +160,49 @@
     </form>
         <form name="formRugasL" method="phost" class="form">
             <h3>Rugas - Longitudinal</h3>
+            <section class="SecAltura" name="SecAltura">
+                <h3>Qual altura da ruga?</h3>
+                <input type="radio"  name="altura1"  class="grupo" >
+                <label for="txtaltura1"> <strong>Regiões de colagem: </strong> que 2mm </label>
+                <br>
+                <input type="radio"  name="altura1"  class="grupo">
+                <label for="txtaltura2"><strong>Foras de área de colagem:</strong>Menor que 5mm</label>
+            </section>
+            <h4>Caso em que altura seja maior que os valores minimos para as regiões dentro e fora da área de colagem</h4>
+            <section class="SecSinais">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao3"  class="grupo">
+                <label for="txtprop1">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao3"  class="grupo">
+                <label for="txtprop2">Sem sinais</label>
+            </section>
+            <section class="SecTempo">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao3"  class="grupo">
+                <label for="txttempo1">Maior que 1 ano</label>
+                <br>
+                <input type="radio"  name="operacao3" class="grupo">
+                <label for="txttempo2">Menor que 1 ano</label>
+            </section>
+          
+            <section class="SecTamanho">
+                <h3>Qual o tamanho da ruga</h3>
+                <input type="radio"  name="tamanho1"  class="grupo">
+                <label for="txttamanho1"> Menor ou igual a 500mm</label>
+                <br>
+                <input type="radio"  name="tamanho1"  class="grupo">
+                <label for="txttamanho2">Maior que 500mm</label>
+            </section>
+          
+            <section class="SecLuz">
+                <h3>Existe luz passante ?</h3>
+                <input type="radio"  name="luz1" class="grupo">
+                <label for="txtluz1">Com luz possante</label>
+                <br>
+                <input type="radio"  name="luz1" class="grupo">
+                <label for="txtluz2">Sem luz passante</label>
+            </section>
         <aside>     
             <input type="button" id="analise" value="Analisar" onclick="carregar0()">
         </aside>
