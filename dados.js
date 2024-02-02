@@ -930,12 +930,15 @@ function selected(value){
       selectElement.selectedIndex = indiceOpition2
      } else if(ftempo1[0].checked && ftam1[0].checked && fprop1[0].checked ){
       selectElement.selectedIndex = indiceOpition3
-     }else if(ftempo1[1].checked && ftam1[0].checked && fprop1[0].checked){
+     }else if(ftempo1[1].checked && ftam1[0].checked ){
       selectElement.selectedIndex = indiceOpition4
      } else if(fprop1[0].checked && ftam1[0].checked && fluz1[1].checked){
       selectElement.selectedIndex = indiceOpition5
      } else if(fprop1[0].checked && ftam1[1].checked || fluz1[0].checked){
       selectElement.selectedIndex = indiceOpition6}
+      else if(fprop1[0].checked){
+        selectElement.selectedIndex = indiceOpition4
+       }
     }
 
  /*Condicionais para rugas  Transversais*/     
@@ -945,35 +948,49 @@ function carregar1(){
   var ftempo = document.getElementsByName('operacao')
   var ftam = document.getElementsByName('tamanho')
   var fluz = document.getElementsByName('luz')
-
-
     if(faltura[0].checked && fprop[1].checked){
       selectElement.selectedIndex = indiceOpition1
      }else if(ftempo[0].checked && fprop[1].checked){
       selectElement.selectedIndex = indiceOpition2
      } else if(ftempo[0].checked && ftam[0].checked && fprop[0].checked ){
       selectElement.selectedIndex = indiceOpition3
-     }else if(ftempo[1].checked && ftam[0].checked && fprop[0].checked){
+     }else if(ftempo[1].checked && ftam[0].checked){
       selectElement.selectedIndex = indiceOpition4
      } else if(fprop[0].checked && ftam[0].checked && fluz[1].checked){
       selectElement.selectedIndex = indiceOpition5
      } else if(fprop[0].checked && ftam[1].checked || fluz[0].checked){
       selectElement.selectedIndex = indiceOpition6  
-  }
-
-  }
-function carregar26(){
-  var fprop = document.getElementsByName('propagacao1')
-  var ftempo = document.getElementsByName('operacao1')
-    if(ftempo[0].checked && fprop[1]){ 
-      selectElement.selectedIndex = indiceOpition3
-    }
-  }
-
-/*Condicionais para Rugas - Longitudinal*/
-
-/*Condicionais para rugas  Transversais*/
+  } else if(fprop[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+ }}
 /*Condicionais para Rugas - Almas*/
+function carregar2(){
+  var faltura = document.getElementsByName('altura2')
+  var fprop = document.getElementsByName('propagacao4')
+  var ftempo = document.getElementsByName('operacao4')
+  var ftam = document.getElementsByName('tamanho2')
+  var fcore = document.getElementsByName('danoCore')
+  var fh = document.getElementsByName('H')
+
+  if(fh[0].checked || faltura[0].checked && ftam[0].checked  && fprop[1].checked){
+    selectElement.selectedIndex = indiceOpition1
+   }else if(ftempo[0].checked && ftam[1].checked && fprop[1].checked ){
+    selectElement.selectedIndex = indiceOpition3
+  }
+   else if(ftempo[0].checked && fprop[1].checked){
+    selectElement.selectedIndex = indiceOpition2
+  } 
+   else if(ftempo[1].checked && ftam[1].checked && fprop[0].checked){
+    selectElement.selectedIndex = indiceOpition4
+   } 
+   else if(fprop[0].checked && ftam[1].checked && fcore[0].checked){
+    selectElement.selectedIndex = indiceOpition5
+   } 
+   else if(fprop[0].checked && ftam[2].checked || fcore[1].checked){
+    selectElement.selectedIndex = indiceOpition6  
+} 
+}
+
 /*Condicionais para Gap ou Ausência de Core - Cascas e Almas*/
 /*Condicionais paraDegrau - Cascas*/
 /*Condicionais para Tecido Seco na superfície - Cascas*/

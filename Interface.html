@@ -261,6 +261,61 @@
             </form>
         <form name="formRugasAlma" method="phost" class="form">
             <h3>Rugas - Almas</h3>
+            <section class="SecH">
+                <h3>H é menor que 1mm?<strong>(Qualquer lado "L")</strong></h3>
+                <input type="radio"  name="H"  class="grupo">
+                <label for="txttamanho"> Sim </label>
+                <br>
+                <input type="radio"  name="H"  class="grupo">
+                <label for="txttamanho1"> Não </label>
+            </section>
+            <section class="SecAltura" name="SecAltura">
+                <h3>Qual altura da ruga?</h3>
+                <input type="radio"  name="altura2"  class="grupo" >
+                <label for="txtaltura">Menor que 2mm </label>
+                <br>
+                <input type="radio"  name="altura2"  class="grupo">
+                <label for="txtaltura1">Maior que 2mm</label>
+            </section>
+            <section class="SecTamanho">
+                <h3>Qual o tamanho da ruga?</h3>
+                <input type="radio"  name="tamanho2"  class="grupo">
+                <label for="txttamanho"> Menor ou igual a 100mm</label>
+                <br>
+                <input type="radio"  name="tamanho2"  class="grupo">
+                <label for="txttamanho"> Menor ou igual a 1000mm</label>
+                <br>
+                <input type="radio"  name="tamanho2"  class="grupo">
+                <label for="txttamanho1">Maior que 1000mm</label>
+
+            </section>
+
+            <section class="SecSinais">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao4"  class="grupo">
+                <label for="txtprop">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao4"  class="grupo">
+                <label for="txtprop1">Sem sinais</label>
+            </section>
+            <section class="SecTempo">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao4"  class="grupo">
+                <label for="txttempo">Maior que 1 ano</label>
+                <br>
+                <input type="radio"  name="operacao4" class="grupo">
+                <label for="txttempo1">Menor que 1 ano</label>
+            </section>
+            <section class="SecDanosCore">
+                <h3>O dano esta na região do core?</h3>
+                <input type="radio"  name="danoCore"  class="grupo">
+                <label for="danoCore">Fora da região do core</label>
+                <br>
+                <input type="radio"  name="danoCore" class="grupo">
+                <label for="danoCore">Dentro da região do core</label>
+            </section>
+          
+
             <aside>     
                 <input type="button" id="analise" value="Analisar" onclick="carregar2()">
             </aside>
