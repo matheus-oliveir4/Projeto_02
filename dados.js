@@ -14,8 +14,8 @@ var indiceOpition6 = 6; /*sev5*/
 function selected(value){
   var radios = document.getElementsByClassName('grupo')
   var formRugasT = document.getElementsByName('form1RugasT')
-  var formAusencia = document.getElementsByName('formAusencia ')
-  var camadaCont = document.getElementsByName('camadaCont')
+  var formAusencia = document.getElementsByName('formAusencia')
+  var formcamadaCont = document.getElementsByName('camadaCont')
   var formRugasL = document.getElementsByName('formRugasL')
   var formRugasAlma = document.getElementsByName('formRugasAlma')
   var formGapAusCore = document.getElementsByName('formGapAusCore')
@@ -26,7 +26,6 @@ function selected(value){
   var formCpCascaECol = document.getElementsByName('formCpCascaECol')
   var formTrincasTrans = document.getElementsByName('formTrincasTrans')
   var formTrincasLong= document.getElementsByName('formTrincasLong')
-
   var formTrincasTransCol = document.getElementsByName('formTrincasTransCol')
   var formTrincasLongCol = document.getElementsByName('formTrincasLongCol')
   var formDescola = document.getElementsByName('formDescola')
@@ -879,7 +878,7 @@ function selected(value){
       formFurosLamC[0].style.display = 'none'
       formFurosLamBF[0].style.display = 'none'
       formAusencia[0].style.display = 'block'
-      camadaCont[0].style.display = 'none'
+      formcamadaCont[0].style.display = 'none'
       selected.selectedIndex = -1; 
      } 
      
@@ -911,7 +910,7 @@ function selected(value){
       formFurosLamC[0].style.display = 'none'
       formFurosLamBF[0].style.display = 'none'
       formAusencia[0].style.display = 'none'
-      camadaCont[0].style.display = 'block'
+      formcamadaCont[0].style.display = 'block'
       selected.selectedIndex = -1; 
      }}
     
@@ -1100,28 +1099,227 @@ function carregar8(){
   }else if(fmat[0].checked){
     selectElement.selectedIndex = indiceOpition5
 
+  }}
+/*Condicionais para Trincas Longitudinais - Cascas e Almas*/
+function carregar9(){
+var fcompri = document.getElementsByName('compTl')
+var fluz = document.getElementsByName('luz6')
+
+if(fcompri[0].checked && fluz[1].checked){
+  selectElement.selectedIndex = indiceOpition4
+} else if(fcompri[1].checked && fluz[1].checked){
+  selectElement.selectedIndex = indiceOpition5
+} else if(fcompri[2].checked && fluz[0].checked){
+  selectElement.selectedIndex = indiceOpition6
+}}
+
+/*Condicionais para Trincas transversais - Cascas e Almas*/
+function carregar10(){
+  var fcompri = document.getElementsByName('compTT')
+  var fluz = document.getElementsByName('luz7')
+
+if(fcompri[0].checked && fluz[1].checked){
+  selectElement.selectedIndex = indiceOpition4
+} else if(fcompri[1].checked && fluz[1].checked){
+  selectElement.selectedIndex = indiceOpition5
+} else if(fcompri[2].checked && fluz[0].checked){
+  selectElement.selectedIndex = indiceOpition6
+}}
+
+/*Condicionais para Trincas Transversais - linhas de colagem*/
+function carregar11(){
+  var flarg = document.getElementsByName('largT')
+  var fdano = document.getElementsByName('danoAss')
+
+  if(flarg[0].checked && fdano[0].checked){
+    selectElement.selectedIndex = indiceOpition3
+  } else if(flarg[1].checked ){
+    selectElement.selectedIndex = indiceOpition4
+
+  }
+}
+/*Condicionais para Trincas Longitudinais - linhas de colagem*/
+function carregar12(){
+ var compriT = document.getElementsByName('largTc')
+
+ if(compriT[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+ } else if (compriT[1].checked){
+  selectElement.selectedIndex = indiceOpition5
+ } else if(compriT[2].checked){
+  selectElement.selectedIndex = indiceOpition6
+ }
+}
+/*Condicionais paraDescolamentos  - Danos na alma/T-pultrudado*/
+
+function carregar13(){
+  var prop = document.getElementsByName('propagação11')
+  var tempo = document.getElementsByName('operacao10')
+  var tam = document.getElementsByName('tamT')
+  var desloc =  document.getElementsByName('desl') 
+ if(desloc[0].checked){
+    selectElement.selectedIndex = indiceOpition6}
+    else if(prop[0].checked && tempo[0].checked){
+    selectElement.selectedIndex = indiceOpition3
+  } else if(prop[1].checked && tam[0].checked){
+    selectElement.selectedIndex = indiceOpition4
+  } else if(prop[1].checked && tam[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+  } 
+  }
+/*Condicionais para Trincas - Inserto do BF*/
+function carregar14(){
+  var comp = document.getElementsByName('tamBF')
+  var abert = document.getElementsByName('abert')
+
+  if(comp[0].checked){
+    selectElement.selectedIndex = indiceOpition4
+  } else if (comp[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+  } else if(abert[0].checked || comp[2].checked){
+    selectElement.selectedIndex = indiceOpition6
   }
 
-
-
 }
-/*Condicionais para Trincas transversais - Cascas e Almas*/
-/*Condicionais para Trincas Longitudinais - Cascas e Almas*/
-/*Condicionais para Trincas Transversais - linhas de colagem*/
-/*Condicionais para Trincas Longitudinais - linhas de colagem*/
-/*Condicionais paraDescolamentos  - Danos na alma/T-pultrudado*/
-/*Condicionais para Trincas - Inserto do BF*/
 /*Condicionais para Linhas de colagem - BA/BF*/
+function carregar15(){
+  var squezz = document.getElementsByName('squez1')
+  var esp = document.getElementsByName('espL')
+  var prop = document.getElementsByName('propagação12')
+
+  if(squezz[0].checked || esp[0].checked){
+    selectElement.selectedIndex = indiceOpition1 
+  } else if(esp[1].checked){
+    selectElement.selectedIndex = indiceOpition2
+  } else if(prop[0].checked || esp[2].checked){
+    selectElement.selectedIndex = indiceOpition3
+  } else if(prop[1].checked || esp[3].checked){
+    selectElement.selectedIndex = indiceOpition4
+  }
+}
 /*Condicionais para Vazio área de colagem ou Squeeze Out Pobre -Almas	*/
+function carregar16(){
+  var squezz = document.getElementsByName("squez2")
+  var prop =document.getElementsByName('propagação13')
+  var compfc = document.getElementsByName("compFC")
+  var compout = document.getElementsByName("compOut")
+  var tec = document.getElementsByName('tec')
+  var despre = document.getElementsByName("desprend")
+if(squezz[0].checked){
+  selectElement.selectedIndex = indiceOpition1 
+} else if(compfc[0].checked && compout[0].checked){
+  selectElement.selectedIndex = indiceOpition2
+} else if(prop[0].checked && tec[1].checked){
+  selectElement.selectedIndex = indiceOpition3
+} else if(prop[1].checked){
+  selectElement.selectedIndex = indiceOpition4
+} else if(compfc[1].checked && compout[1].checked){
+  selectElement.selectedIndex = indiceOpition5
+} else if (despre[1].checked){
+  selectElement.selectedIndex = indiceOpition6
+}
+}
+
 /*Condicionais para Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	*/
+function carregar17(){
+  var larg = document.getElementsByName('largPest')
+  var comp = document.getElementsByName('compPest')
+if(larg[0].checked && comp[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+} else if(comp[0].checked && larg[1].checked){
+  selectElement.selectedIndex = indiceOpition5
+}else if(comp[1].checked || larg[2].checked){
+  selectElement.selectedIndex = indiceOpition6
+}
+}
 /*Condicionais para Materiais soltos em geral - Interno da pá	*/
+function carregar18(){
+  var mat = document.getElementsByName('MatSol')
+
+  if(mat[0].checked || mat[1].checked){
+    selectElement.selectedIndex = indiceOpition4
+  }
+}
 /*Condicionais para Delaminações - Cascas e Almas	*/
+function carregar19(){
+  var tam = document.getElementsByName('tamDC')
+  var prop = document.getElementsByName('propagação14')
+
+  if(tam[0].checked){
+    selectElement.selectedIndex = indiceOpition4
+  } else if(prop[0].checked && tam[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+  } else if(prop[1].checked && tam[1].checked){
+    selectElement.selectedIndex = indiceOpition6
+  } else if(tam[2].checked){
+    selectElement.selectedIndex = indiceOpition6
+  }}
 /*Condicionais para Delaminações - T-pultrudado	*/
+function carregar20(){
+  var tempo = document.getElementsByName('operacao11')
+  var prop = document.getElementsByName('propagação16')
+  var comp = document.getElementsByName('compDC1')
+  
+  if(prop[0].checked && tempo[0].checked){
+    selectElement.selectedIndex = indiceOpition3
+  } else if(comp[0].checked){
+    selectElement.selectedIndex = indiceOpition4
+  } else if(prop[1].checked || comp[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+  } else if(prop[2].checked){
+    selectElement.selectedIndex = indiceOpition6
+  }
+}
+
 /*Condicionais para LPS/LCTU - Root Chamber	*/
+function carregar21(){
+  var  caboDesf = document.getElementsByName('caboDesf')
+  var porConec = document.getElementsByName('porConec')
+  var caboDan = document.getElementsByName('caboDan')
+
+if(caboDan[0].checked){
+  selectElement.selectedIndex = indiceOpition5
+}else if(porConec[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+}else if(caboDesf[0].checked){
+  selectElement.selectedIndex = indiceOpition3
+}
+}
 /*Condicionais para Danos ocasionados por raios/queimados/Flashover	*/
+
+
 /*Condicionais para Camada rompida devido lixamento ou remoção de nylon	*/
+function carregar23(){
+  var tempo = document.getElementsByName('operacao12')
+  var prop = document.getElementsByName('propagação17')
+ if(tempo[1].checked && prop[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+ } else if(tempo[0].checked && prop[0].checked){
+  selectElement.selectedIndex = indiceOpition2
+ }
+}
 /*Condicionais para Furos no laminado - Casca*/	
+function carregar24(){
+  var tempo = document.getElementsByName('operacao13')
+  var prop = document.getElementsByName('propagação18')
+ if(tempo[1].checked && prop[0].checked){
+  selectElement.selectedIndex = indiceOpition4
+ } else if(tempo[0].checked && prop[0].checked){
+  selectElement.selectedIndex = indiceOpition3
+ }
+}
+
+
 /*Condicionais para Furos no laminado - Inserto do BF	*/
+function carregar25(){
+  var tempo = document.getElementsByName('operacao14')
+  var prop = document.getElementsByName('propagação19')
+ if(prop[1].checked){
+  selectElement.selectedIndex = indiceOpition4
+ } else if(tempo[0].checked && prop[0].checked){
+  selectElement.selectedIndex = indiceOpition3
+ }
+}
 /*Condicionais para Ausência de camada (Preform) - LE/TE - Casca*/
 function carregar26(){
   var fprop = document.getElementsByName('propagacao1')
