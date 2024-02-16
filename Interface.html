@@ -689,6 +689,7 @@
         </form>
         <form name="formDescola" method="phost" class="form">
             <h3>Descolamentos  - Danos na alma/T-pultrudado</h3>
+            <h4>* Se não houver inspeção anterior disponível, manter como CAT 2</h4>
             <section class="SecSinais">
                 <h3>Existem  sinais de propagação da trinca?</h3>
                 <input type="radio"  name="propagação11"  class="grupo">
@@ -997,6 +998,42 @@
 
         <form name="formDanosRaios" method="phost" class="form">
             <h3>Danos ocasionados por raios/queimados/Flashover</h3>
+            <section class="SecComp">
+                <h3>Possui sinais de dando no carbono?</h3>
+                <input type="radio"  name="danoR"  class="grupo">
+                <label for="txtprop1">Sim </label>
+                <br>
+                <input type="radio"  name="danoR"  class="grupo">
+                <label for="txtprop1">Não</label>
+            </section>
+            <section class="SecComp">
+                <h3> Qual o comprimento de quais quer estrago/queimado/arco elétrico  ?</h3>
+                <input type="radio"  name="compRaio"  class="grupo">
+                <label for="txtprop1"> comprimento ≤ 300 mm em qualquer direção</label>
+                <br>
+                <input type="radio"  name="compRaio"  class="grupo">
+                <label for="txtprop1">300 mm > comprimento ≤450 mm em qualquer direção</label>
+                <br>
+                <input type="radio"  name="compRaio"  class="grupo">
+                <label for="txtprop1">Estrago/queimado/arco elétrico >450 mm em qualquer direção</label>
+            </section>
+            <section class="SecComp">
+                <h3>Qual a area danificada pelo dano?</h3>
+                <input type="radio"  name="danoArea"  class="grupo">
+                <label for="txtprop1">Área danificada ≤ 40.000 mm² </label>
+                <br>
+                <input type="radio"  name="danoArea"  class="grupo">
+                <label for="txtprop1">Área danificada > 40.000 mm²</label>
+            </section>
+            <section class="SecComp">
+                <h3>Qual aa distancia do dano para o carbono?</h3>
+                <input type="radio"  name="distanC"  class="grupo">
+                <label for="txtprop1">Distância do carbono  ≥ 150 mm² </label>
+                <br>
+                <input type="radio"  name="distanC"  class="grupo">
+                <label for="txtprop1">Distância do carbono  < 150 mm²</label>
+            </section>
+
             <aside>     
                 <input type="button" id="analise" value="Analisar" onclick="carregar22()">
             </aside>
@@ -1026,6 +1063,7 @@
 
         <form name="formFurosLamC" method="phost" class="form">
             <h3>Furos no laminado - Casca</h3>
+            <h4>* Caso não seja possível avaliação, manter como severidade 2</h4>
         <section class="SecSinais">
                 <h3>Sinais de desenvolvimento do dano(trincas ou delaminações)?</h3>
                 <input type="radio"  name="propagação18"  class="grupo">

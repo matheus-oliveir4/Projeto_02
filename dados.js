@@ -1286,6 +1286,27 @@ if(caboDan[0].checked){
 }
 }
 /*Condicionais para Danos ocasionados por raios/queimados/Flashover	*/
+function carregar22(){
+  var danoR = document.getElementsByName("danoR")
+  var compRaio = document.getElementsByName("compRaio" )
+  var danoArea = document.getElementsByName('danoArea')
+  var distanC = document.getElementsByName('distanC')
+  
+  if(danoR[0].checked){
+    selectElement.selectedIndex = indiceOpition6
+  } else if( compRaio[2].checked && danoR[1].checked){
+    selectElement.selectedIndex = indiceOpition6
+  } else if(danoArea[1].checked && distanC[1].checked){
+    selectElement.selectedIndex = indiceOpition6
+  } else if(danoR[1].checked && compRaio[1].checked){
+    selectElement.selectedIndex = indiceOpition5
+  } else if(danoArea[0].checked && distanC[0].checked && compRaio[0].checked && danoR[1].checked){
+    selectElement.selectedIndex = indiceOpition4
+  }else if(danoArea[0].checked && distanC[0].checked){
+    selectElement.selectedIndex = indiceOpition5
+}}
+
+
 
 
 /*Condicionais para Camada rompida devido lixamento ou remoção de nylon	*/
