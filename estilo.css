@@ -1,5 +1,8 @@
 
-    #open-modal {
+   body{
+    background-color: #0040898c;
+   }
+   #open-modal {
         background-color: #007bff;
     }
 
@@ -174,7 +177,7 @@
         top: 0%;
         right: 21%;
         z-index: 10;
-        background-color: #beb8b896;
+        background-color: #00408979;
         width: 360px;
         height: 94%;
         margin: 0;

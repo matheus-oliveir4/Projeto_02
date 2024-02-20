@@ -58,18 +58,21 @@
                 <div class="form-group-new">
                     <div class="col-sm-12">
                         <label for="layer_id">Layer</label>
-                        <select name="layer_id" class="new-select" id="layer_id" required>
-                            <option value="" selected>Select</option>
-                            @foreach ($layers as $layer)
-                                <option value="{{ $layer->id }}">{{ $layer->layer }}</option>
-                            @endforeach
+                        <select name="layer_id" class="new-select" id="layer_id" >
+                            <option  selected>Select</option>
+                            <option value="1">No Issues</option>
+                            <option value="2">Light Structural</option>
+                            <option value="3">Minor Structural</option>
+                            <option value="4">Medium Structural</option>
+                            <option value="5">High Structural</option>
+                            <option value="6">Critical Structural</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group-new">
                     <div class="col-sm-12">
                         <label for="progression">Progression</label>
-                        <select name="progression" class="new-select" id="progression" required>
+                        <select name="progression" class="new-select" id="progression">
                             <option value="" selected>Select</option>
                             <option>New</option>
                             <option>Change</option>
@@ -82,7 +85,7 @@
                 <div class="form-group-new" name="form-group-new">
                     <div class="col-sm-12">
                         <label for="section">Section</label>
-                        <select name="section" class="new-select" id="section" required>
+                        <select name="section" class="new-select" id="section" >
     
                         </select>
                     </div>
@@ -96,14 +99,14 @@
                     <div class="col-sm-12" name="col-sm-12">
                         <label for="severity">Severity <br></label>
     
-                       <select class="new-select" name="severity" id="severity" required>
+                       <select class="new-select" name="severity" id="severity">
                             <option selected>Severity</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="8">0</option>
+                            <option value="9">1</option>
+                            <option value="10">2</option>
+                            <option value="11">3</option>
+                            <option value="12">4</option>
+                            <option value="13">5</option>
                         </select>
                     </div>
                 </div>
@@ -111,7 +114,7 @@
                     <div class="col-sm-12">
                         <label for="recommendation_id">Recommendation</label>
                         <select class="new-select" name="recommendation_id" id="recommendation_id" required>
-                            <option value="" selecte d>Selecione</option>
+                            <option value="" selecte d>Select</option>
                             @foreach ($recommendations as $recommendation)
                                 <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
                             @endforeach
@@ -158,15 +161,15 @@
         </div>
         </div>
     </form>
-        <form name="formRugasL" method="phost" class="form">
+        <form name="formRugasL" method="phost" class="form" id="form0">
             <h3>Rugas - Longitudinal</h3>
             <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
                 <input type="radio"  name="altura1"  class="grupo" >
-                <label for="txtaltura1"> <strong>Regiões de colagem: </strong> que 2mm </label>
+                <label for="txtaltura1"> <strong>Regiões de colagem: </strong> Altura ≤ 2mm </label>
                 <br>
                 <input type="radio"  name="altura1"  class="grupo">
-                <label for="txtaltura2"><strong>Foras de área de colagem:</strong>Menor que 5mm</label>
+                <label for="txtaltura2"><strong>Foras de área de colagem:</strong> Altura < 5mm</label>
             </section>
             <h4>Caso em que altura seja maior que os valores minimos para as regiões dentro e fora da área de colagem</h4>
             <section class="SecSinais">
@@ -180,19 +183,19 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao3"  class="grupo">
-                <label for="txttempo1">Maior que 1 ano</label>
+                <label for="txttempo1">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao3" class="grupo">
-                <label for="txttempo2">Menor que 1 ano</label>
+                <label for="txttempo2">Tempo < 1 ano</label>
             </section>
           
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
                 <input type="radio"  name="tamanho1"  class="grupo">
-                <label for="txttamanho1"> Menor ou igual a 500mm</label>
+                <label for="txttamanho1"> Tamanho ≤ 500mm</label>
                 <br>
                 <input type="radio"  name="tamanho1"  class="grupo">
-                <label for="txttamanho2">Maior que 500mm</label>
+                <label for="txttamanho2">Tamanho > 500mm</label>
             </section>
           
             <section class="SecLuz">
@@ -207,16 +210,16 @@
             <input type="button" id="analise" value="Analisar" onclick="carregar0()">
         </aside>
         </form>
-    <form name="form1RugasT" id="form1RugasT"method="phost" class="form"> 
+    <form name="form1RugasT"  method="phost" class="form" id="form1"> 
         <h3>Rugas - Transversais</h3>
           
             <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
                 <input type="radio"  name="altura"  class="grupo" >
-                <label for="txtaltura">Menor que 2mm </label>
+                <label for="txtaltura">Altura < 2mm </label>
                 <br>
                 <input type="radio"  name="altura"  class="grupo">
-                <label for="txtaltura1">Maior que 2mm</label>
+                <label for="txtaltura1">Altura > 2mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -229,19 +232,19 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
           
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
                 <input type="radio"  name="tamanho"  class="grupo">
-                <label for="txttamanho"> Menor ou igual a 300mm</label>
+                <label for="txttamanho"> Tamanho ≤ 300mm</label>
                 <br>
                 <input type="radio"  name="tamanho"  class="grupo">
-                <label for="txttamanho1">Maior que 300mm</label>
+                <label for="txttamanho1">Tamanho > 300mm</label>
             </section>
           
             <section class="SecLuz">
@@ -259,7 +262,7 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar1()">
             </aside>
             </form>
-        <form name="formRugasAlma" method="phost" class="form">
+        <form name="formRugasAlma" method="phost" class="form" id="form2">
             <h3>Rugas - Almas</h3>
             <section class="SecH">
                 <h3>H é menor que 1mm?<strong>(Qualquer lado "L")</strong></h3>
@@ -272,21 +275,21 @@
             <section class="SecAltura" name="SecAltura">
                 <h3>Qual altura da ruga?</h3>
                 <input type="radio"  name="altura2"  class="grupo" >
-                <label for="txtaltura">Menor que 2mm </label>
+                <label for="txtaltura">Altura < 2mm </label>
                 <br>
                 <input type="radio"  name="altura2"  class="grupo">
-                <label for="txtaltura1">Maior que 2mm</label>
+                <label for="txtaltura1">Altura > 2mm</label>
             </section>
             <section class="SecTamanho">
                 <h3>Qual o tamanho da ruga?</h3>
                 <input type="radio"  name="tamanho2"  class="grupo">
-                <label for="txttamanho"> Menor ou igual a 100mm</label>
+                <label for="txttamanho"> Tamanho ≤ 100mm</label>
                 <br>
                 <input type="radio"  name="tamanho2"  class="grupo">
-                <label for="txttamanho"> Menor ou igual a 1000mm</label>
+                <label for="txttamanho">Tamanho ≤ 1000mm</label>
                 <br>
                 <input type="radio"  name="tamanho2"  class="grupo">
-                <label for="txttamanho1">Maior que 1000mm</label>
+                <label for="txttamanho1">Tamanho > 1000mm</label>
 
             </section>
 
@@ -301,10 +304,10 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao4"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao4" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecDanosCore">
                 <h3>O dano esta na região do core?</h3>
@@ -321,15 +324,15 @@
             </aside>
         </form>
 
-        <form name="formGapAusCore" method="phost" class="form">
+        <form name="formGapAusCore" method="phost" class="form" id="form3">
             <h3>Gap ou Ausência de Core - Cascas e Almas</h3> 
             <section class="SecTamGap">
                 <h3>Tamanho do Gap</h3>
                 <input type="radio"  name="gap"  class="grupo">
-                <label for="gap">Gap menor que ou igual a 5mm</label>
+                <label for="gap">Gap ≤ 5mm</label>
                 <br>
                 <input type="radio"  name="gap" class="grupo">
-                <label for="gap">Gap maior ou igual a 5mm</label>
+                <label for="gap">Gap > 5mm</label>
             </section>
             <section class="SecPreenResina">
                 <h3> Gap preenchido com resina?</h3>
@@ -350,10 +353,10 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao5"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao5" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -384,15 +387,15 @@
             </aside>
         </form>
 
-        <form name="formDegrauC" method="phost" class="form">
+        <form name="formDegrauC" method="phost" class="form" id="form4">
             <h3>Degrau - Cascas</h3>
             <section class="SecAlturaD">
                 <h3>Qual altura do degrau?</h3>
                 <input type="radio"  name="alturaD"  class="grupo" >
-                <label for="txtaltura">Menor que ou igual a 2mm </label>
+                <label for="txtaltura">Altura  ≤ 2mm </label>
                 <br>
                 <input type="radio"  name="alturaD"  class="grupo">
-                <label for="txtaltura1">Maior que 2mm</label>
+                <label for="txtaltura1">Altura > 2mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -406,18 +409,18 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao6"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao6" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecLengD">
                 <h3>Qual o comprimento do degrau?</h3>
                 <input type="radio"  name="compD"  class="grupo" >
-                <label for="txtaltura">Menor ou igual a 500mm</label>
+                <label for="txtaltura">Comprimendo ≤ 500mm</label>
                 <br>
                 <input type="radio"  name="compD"  class="grupo">
-                <label for="txtaltura1">Maior que 500mm</label>
+                <label for="txtaltura1">Comprimendo > 500mm</label>
             </section>
             <section class="SecLuz1">
                 <h3>Existe luz passante ?</h3>
@@ -431,19 +434,19 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar4()">
             </aside>
         </form>
-        <form name="formTecSuperC" method="phost" class="form">
+        <form name="formTecSuperC" method="phost" class="form" id="form5">
             <h3>Tecido Seco na superfície - Cascas</h3>
             <h4>* Caso haja presença de danos associados, o tamanho do defeito a ser considerado será a soma da região com tecido seco + defeito associado</h4>
             <section class="SecLengD">
                 <h3>Tamanho do tecido seco (Comprimento e largura)?</h3>
                 <input type="radio"  name="compT"  class="grupo" >
-                <label for="txtaltura">Menor ou igual a 100mm</label>
+                <label for="txtaltura">Tamanho ≤ 100mm</label>
                 <br>
                 <input type="radio"  name="compT"  class="grupo">
-                <label for="txtaltura1">450 mm  ≥ Tamanho do tecido seco </label>
+                <label for="txtaltura1">450 mm  ≥ Tamanho </label>
                 <br>
                 <input type="radio"  name="compT"  class="grupo">
-                <label for="txtaltura1">Tamanho do tecido seco ≥ 450mm </label>
+                <label for="txtaltura1">Tamanho ≥ 450mm </label>
             </section>
             
             <aside>     
@@ -451,7 +454,7 @@
             </aside>
         </form>
 
-        <form name="formSemiSec" method="phost" class="form">
+        <form name="formSemiSec" method="phost" class="form" id="form6">
             <h3>Tecido Semi-Seco - Cascas e Almas</h3>
             <h4>* Se houver outro defeito relacionado ao semisseco, 
                 como trinca, delaminação, etc., avalie o caso usando a 
@@ -459,18 +462,18 @@
             <section class="SecLengD">
                     <h3>Qual o comprimento do degrau?</h3>
                     <input type="radio"  name="compTS"  class="grupo" >
-                    <label for="txtaltura">Menor ou igual a 100mm</label>
+                    <label for="txtaltura">Comprimento ≤ 100mm</label>
                     <br>
                     <input type="radio"  name="compTS"  class="grupo">
-                    <label for="txtaltura1">Maior que 100mm</label>
+                    <label for="txtaltura1">Comprimendo > 100mm</label>
             </section>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao7"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <input type="radio"  name="operacao7"  cl ass="grupo">
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao7" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -485,31 +488,31 @@
             </aside>
         </form>
 
-        <form name="formBolhasC" method="phost" class="form">
+        <form name="formBolhasC" method="phost" class="form" id="form7">
             <h3>Bolhas - Casca</h3>
             <section class="SecLengT">
                 <h3>Qual tamanho da bolha?</h3>
                 <input type="radio"  name="tamB"  class="grupo" >
-                <label for="txtaltura">Tamanho da bolha ≤20 mm x 60 mm </label>
+                <label for="txtaltura">Tamanho  ≤ 20 mm x 60 mm </label>
                 <br>
                 <input type="radio"  name="tamB"  class="grupo">
-                <label for="txtaltura1">Tamanho da bolha ≤60 mm x 20 mm</label>
+                <label for="txtaltura1">Tamanho ≤ 60 mm x 20 mm</label>
             </section>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao8"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao8" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecLengD">
                 <h3>Qual o comprimento da bolha?</h3>
                 <input type="radio"  name="compB"  class="grupo" >
-                <label for="txtaltura">Menor ou igual a 500mm</label>
+                <label for="txtaltura">Comprimento  ≤ a 500mm</label>
                 <br>
                 <input type="radio"  name="compB"  class="grupo">
-                <label for="txtaltura1">Maior que 500mm</label>
+                <label for="txtaltura1">Comprimento > 500mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -548,16 +551,16 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar7()">
             </aside>
         </form>
-        <form name="formCpCascaECol" method="phost" class="form">
+        <form name="formCpCascaECol" method="phost" class="form" id="form8">
             <h3>Corpo Estranho - Cascas e área de colagem 
                 (Somente aplicável para laminados infudidos ou áreas de colagem)</h3>
             <section class="SecTempo">
                     <h3>Qual tempo de operação da pá?</h3>
                     <input type="radio"  name="operacao9"  class="grupo">
-                    <label for="txttempo">Maior que 1 ano</label>
+                    <label for="txttempo">Tempo > 1 ano</label>
                     <br>
                     <input type="radio"  name="operacao9" class="grupo">
-                    <label for="txttempo1">Menor que 1 ano</label>
+                    <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
@@ -578,11 +581,11 @@
             <section class="SecTam">
                 <h3>Qual tamanho do material?</h3>
                 <input type="radio"  name="tamC"  class="grupo" >
-                <label for="txtaltura">Menor  ou igual a 2.500 mm²
+                <label for="txtaltura">Tamanho ≤ a 2.500 mm²
                 </label>
                 <br>
                 <input type="radio"  name="tamC"  class="grupo">
-                <label for="txtaltura1">Maior 2.500 mm²</label>
+                <label for="txtaltura1">Tamnho > 2.500 mm²</label>
             </section>
 
             <aside>     
@@ -592,19 +595,19 @@
 
 
 
-        <form name="formTrincasLong" method="phost" class="form">
+        <form name="formTrincasLong" method="phost" class="form" id="form9">
             <h3>Trincas Longitudinais - Cascas e Almas</h3>
 
             <section class="SecLengD">
                 <h3>Qual o comprimento da trinca?</h3>
                 <input type="radio"  name="compTl"  class="grupo" >
-                <label for="txtaltura">Menor que 500 mm</label>
+                <label for="txtaltura">Comprimento < 500 mm</label>
                 <br>
                 <input type="radio"  name="compTl"  class="grupo">
-                <label for="txtaltura1">1000 mm ≥ Comprimento(trinca) ≥ 500 mm</label>
+                <label for="txtaltura1">1000 mm ≥ Comprimento ≥ 500 mm</label>
                 <br>
                 <input type="radio"  name="compTl"  class="grupo">
-                <label for="txtaltura1">Maior que 1000 mm</label>
+                <label for="txtaltura1">Comprimento > 1000 mm</label>
             </section>
 
             <section class="SecLuz1">
@@ -620,18 +623,18 @@
             </aside>
         </form>
 
-        <form name="formTrincasTrans" method="phost" class="form">
+        <form name="formTrincasTrans" method="phost" class="form" id="form10">
             <h3>Trincas transversais - Cascas e Almas</h3>
             <section class="SecLengD">
                 <h3>Qual a largura da trinca?</h3>
                 <input type="radio"  name="compTT"  class="grupo" >
-                <label for="txtaltura">Menor que 300 mm</label>
+                <label for="txtaltura">Largura < 300 mm</label>
                 <br>
                 <input type="radio"  name="compTT"  class="grupo">
-                <label for="txtaltura1">450 mm ≥ Largura(trinca) ≥ 300 mm</label>
+                <label for="txtaltura1">450 mm ≥ Largura ≥ 300 mm</label>
                 <br>
                 <input type="radio"  name="compTT"  class="grupo">
-                <label for="txtaltura1">Maior que 450 mm</label>
+                <label for="txtaltura1">Largura > 450 mm</label>
             </section>
 
             <section class="SecLuz1">
@@ -647,16 +650,16 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar10()">
             </aside>
         </form>
-        <form name="formTrincasTransCol" method="phost" class="form">
+        <form name="formTrincasTransCol" method="phost" class="form" id="form11">
             <h3>Trincas Transversais - linhas de colagem</h3>
 
             <section class="SecLengD">
                 <h3>Qual a largura da trinca?</h3>
                 <input type="radio"  name="largT"  class="grupo" >
-                <label for="txtaltura">Menor que 2 mm</label>
+                <label for="txtaltura">Largura < 2 mm</label>
                 <br>
                 <input type="radio"  name="largT"  class="grupo">
-                <label for="txtaltura1">Maior que 2 mm</label>
+                <label for="txtaltura1">Largura > 2 mm</label>
             </section>
             <section class="SecSinais">
                 <h3>Existem  sinais de danos associados?</h3>
@@ -670,24 +673,24 @@
 
 
 
-        <form name="formTrincasLongCol" method="phost" class="form">
+        <form name="formTrincasLongCol" method="phost" class="form" id="form12">
             <h3>Trincas Longitudinais - linhas de colagem</h3>
             <section class="SecLengD">
                 <h3>Qual o comprimento da trinca?</h3>
                 <input type="radio"  name="largTc"  class="grupo" >
-                <label for="txtaltura">Menor que 300 mm</label>
+                <label for="txtaltura">Comprimento < 300 mm</label>
                 <br>
                 <input type="radio"  name="largTc"  class="grupo">
-                <label for="txtaltura1"> 500 mm ≥ Comprimento(trinca) ≥300 mm </label>
+                <label for="txtaltura1"> 500 mm ≥ Comprimento ≥ 300 mm </label>
                 <br>
                 <input type="radio"  name="largTc"  class="grupo">
-                <label for="txtaltura1">Maior que 500 mm</label>
+                <label for="txtaltura1">Comprimento > 500 mm</label>
             </section>
             <aside>     
                 <input type="button" id="analise" value="Analisar" onclick="carregar12()">
             </aside>
         </form>
-        <form name="formDescola" method="phost" class="form">
+        <form name="formDescola" method="phost" class="form" id="form13">
             <h3>Descolamentos  - Danos na alma/T-pultrudado</h3>
             <h4>* Se não houver inspeção anterior disponível, manter como CAT 2</h4>
             <section class="SecSinais">
@@ -702,19 +705,19 @@
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao10"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao10" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
             <br>
             <section class="SecLengD">
                 <h3>Qual o tamanho da trinca?</h3>
                 <input type="radio"  name="tamT"  class="grupo" >
-                <label for="txtaltura">Menor que 500 mm</label>
+                <label for="txtaltura">Tamanho < 500 mm</label>
                 <br>
                 <input type="radio"  name="tamT"  class="grupo">
-                <label for="txtaltura1">Maior ou igual 500mm</label>
+                <label for="txtaltura1">Tamanho ≥ 500mm</label>
             </section>
             <br>
             <section class="SecDeslo">
@@ -731,20 +734,20 @@
         </form>
 
 
-        <form name="formTrincasInsBf" method="phost" class="form">
+        <form name="formTrincasInsBf" method="phost" class="form" id="form14">
             <h3>Trincas - Inserto do BF</h3>
 
             <section class="SecLengBF">
-                <h3>Qual comprimentom da trinca/delaminação?</h3>
+                <h3>Qual comprimento da trinca/delaminação?</h3>
                 <input type="radio"  name="tamBF"  class="grupo" >
-                <label for="txtaltura">Menor ou igual a 1.000 mm</label>
+                <label for="txtaltura">Comprimento  ≤ 1.000 mm</label>
                 <br>
                 <input type="radio"  name="tamBF"  class="grupo">
                 <label for="txtaltura1"> 1.000 mm < Comprimento 
                     ≤ 2.000 mm </label>
                 <br>
                 <input type="radio"  name="tamBF"  class="grupo" >
-                <label for="txtaltura">Maior que 2.000 mm</label>
+                <label for="txtaltura">Comprimento > 2.000 mm</label>
                 <br>
             </section>
             <section class="SecDeslo">
@@ -761,7 +764,7 @@
         </form>
 
 
-        <form name="formLinhasDeColBABF" method="phost" class="form">
+        <form name="formLinhasDeColBABF" method="phost" class="form" id="form15">
             <h3>Linhas de colagem - BA/BF</h3>
             <section class="SecSquezz">
                 <h3>Squeeze Out é visível ?</h3>
@@ -773,16 +776,16 @@
             <section class="SecEspLC">
                 <h3>Qual a espessura da linha de colagem?</h3>
                 <input type="radio"  name="espL"  class="grupo" >
-                <label for="txtaltura">Espessura de colagem: ≤10 mm</label>
+                <label for="txtaltura">Espessura ≤10 mm</label>
                 <br>
                 <input type="radio"  name="espL"  class="grupo">
-                <label for="txtaltura1">10 mm < Espessura de colagem  ≤20 mm </label>
+                <label for="txtaltura1">10 mm < Espessura ≤20 mm </label>
                 <br>
                 <input type="radio"  name="espL"  class="grupo" >
-                <label for="txtaltura">20 mm < Espessura de colagem  ≤30 mm</label>
+                <label for="txtaltura">20 mm < Espessura ≤30 mm</label>
                 <br>
                 <input type="radio"  name="espL"  class="grupo" >
-                <label for="txtaltura">Espessura de colagem > 30 mm</label>
+                <label for="txtaltura">Espessura > 30 mm</label>
                 <br>
             </section>
             <section class="SecSinais">
@@ -798,7 +801,7 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar15()">
             </aside>
         </form>
-        <form name="formVazioAreaColSque" method="phost" class="form">
+        <form name="formVazioAreaColSque" method="phost" class="form" id="form16">
             <h3>Vazio área de colagem ou Squeeze Out Pobre - Almas</h3>
             <section class="SecSquezz">
                 <h3>Squeeze Out em ambos os lados?</h3>
@@ -810,10 +813,10 @@
             <section class="SecLadosOps">
                 <h3>Comprimento das falhas de colagem?</h3>
                 <input type="radio"  name="compFC"  class="grupo">
-                <label for="txtprop1">Falha de um dos lado ≤35 mm</label>
+                <label for="txtprop1">Falha de um dos lado ≤ 35 mm</label>
                 <br>
                 <input type="radio"  name="compFC"  class="grupo">
-                <label for="txtprop1">Falha de um dos lado >35 mm</label>
+                <label for="txtprop1">Falha de um dos lado > 35 mm</label>
             </section>
             <section class="SecLadosOps">
                 <h3>Comprimento das falhas de colagem?</h3>
@@ -858,16 +861,16 @@
 
 
 
-        <form name="formVazioColPestBABF" method="phost" class="form">
+        <form name="formVazioColPestBABF" method="phost" class="form" id="form17">
             <h3>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz</h3>
             
             <section class="SecComp">
                 <h3>Qual o comprimento do vazio?</h3>
                 <input type="radio"  name="compPest"  class="grupo">
-                <label for="txtprop1">Comprimento da falha ≤ 770 mm</label>
+                <label for="txtprop1">Comprimento ≤ 770 mm</label>
                 <br>
                 <input type="radio"  name="compPest"  class="grupo">
-                <label for="txtprop1">Comprimento da falha > 770 mm</label>
+                <label for="txtprop1">Comprimento > 770 mm</label>
             </section>
             <br>
             <section class="SecLarg">
@@ -876,7 +879,7 @@
                 <label for="txtprop1">Largura ≤ 120 mm</label>
                 <br>
                 <input type="radio"  name="largPest"  class="grupo">
-                <label for="txtprop1">120 mm < Largura ≤354 mm</label>
+                <label for="txtprop1">120 mm < Largura ≤ 354 mm</label>
                 <br>
                 <input type="radio"  name="largPest"  class="grupo">
                 <label for="txtprop1">Largura > 354 mm</label>
@@ -886,7 +889,7 @@
             </aside>
         </form>
 
-        <form name="formMateriaisSoltos" method="phost" class="form">
+        <form name="formMateriaisSoltos" method="phost" class="form" id="form18">
             <h3>Materiais soltos em geral - Interno da pá</h3>
             <section class="SecMat">
                 <h3>Qual tipo de material se encontra solto no interno da pá?</h3>
@@ -900,18 +903,18 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar18()">
             </aside>
         </form>
-        <form name="formDelamCA" method="phost" class="form">
+        <form name="formDelamCA" method="phost" class="form" id="form19">
             <h3>Delaminações - Cascas e Almas</h3>
             <section class="SecComp">
                 <h3>Qual o tamanho da delaminação em qualquer direção?</h3>
                 <input type="radio"  name="tamDC"  class="grupo">
-                <label for="txtprop1">Tamanho em qualquer direção < 300 mm </label>
+                <label for="txtprop1">Tamanho em  < 300 mm </label>
                 <br>
                 <input type="radio"  name="tamDC"  class="grupo">
-                <label for="txtprop1">700 mm ≥ Tamanho em qualquer direção ≥ 300 mm</label>
+                <label for="txtprop1">700 mm ≥ Tamanho  ≥ 300 mm</label>
                 <br>
                 <input type="radio"  name="tamDC"  class="grupo">
-                <label for="txtprop1">Tamanho em qualquer direção >700 mm</label>
+                <label for="txtprop1">Tamanho > 700 mm</label>
             </section>
             <br>
             <section class="SecSinais">
@@ -927,7 +930,7 @@
             </aside>
         </form>
 
-        <form name="formDelamTpul" method="phost" class="form">
+        <form name="formDelamTpul" method="phost" class="form" id="form20">
             <h3>Delaminações - T-pultrudado</h3>
             <h4>* Se a distância entre os danos for inferior a 100 mm,
                  eles devem ser considerados como parte do mesmo defeito.
@@ -936,10 +939,10 @@
             <section class="SecTempo">
                     <h3>Qual tempo de operação da pá?</h3>
                     <input type="radio"  name="operacao11"  class="grupo">
-                    <label for="txttempo">Maior que 1 ano</label>
+                    <label for="txttempo"> Tempo > 1 ano</label>
                     <br>
                     <input type="radio"  name="operacao11" class="grupo">
-                    <label for="txttempo1">Menor que 1 ano</label>        
+                    <label for="txttempo1">Tempo < 1 ano</label>        
             </section>
 
             <section class="SecComp">
@@ -954,7 +957,7 @@
 
             <section class="SecSinais">
                     <h3>Situação do dano?</h3>
-                    <input type="radio"  name="propagação16"  class="grupo">
+                    <input type="radio"  name="propagação16"  class="grupo" >
                     <label for="txtprop1">Dano sem propagação de trinca</label>
                     <br>
                     <input type="radio"  name="propagação16"  class="grupo">
@@ -967,7 +970,7 @@
                 <input type="button" id="analise" value="Analisar" onclick="carregar20()">
             </aside>
         </form>
-        <form name="formLPSLCTU" method="phost" class="form">
+        <form name="formLPSLCTU" method="phost" class="form" id="form21">
             <h3>LPS/LCTU - Root Chamber</h3>
             <h3>Situação do sistema</h3>
             <section class="SecSinaisLPS">
@@ -996,7 +999,7 @@
             </aside>
         </form>
 
-        <form name="formDanosRaios" method="phost" class="form">
+        <form name="formDanosRaios" method="phost" class="form" id="form22">
             <h3>Danos ocasionados por raios/queimados/Flashover</h3>
             <section class="SecComp">
                 <h3>Possui sinais de dando no carbono?</h3>
@@ -1007,15 +1010,15 @@
                 <label for="txtprop1">Não</label>
             </section>
             <section class="SecComp">
-                <h3> Qual o comprimento de quais quer estrago/queimado/arco elétrico  ?</h3>
+                <h3> Qual o comprimento de quais quer estrago/queimado/arco elétrico(qualquer direção)  ?</h3>
                 <input type="radio"  name="compRaio"  class="grupo">
-                <label for="txtprop1"> comprimento ≤ 300 mm em qualquer direção</label>
+                <label for="txtprop1"> Comprimento ≤ 300 mm </label>
                 <br>
                 <input type="radio"  name="compRaio"  class="grupo">
-                <label for="txtprop1">300 mm > comprimento ≤450 mm em qualquer direção</label>
+                <label for="txtprop1">300 mm > Comprimento ≤450 mm </label>
                 <br>
                 <input type="radio"  name="compRaio"  class="grupo">
-                <label for="txtprop1">Estrago/queimado/arco elétrico >450 mm em qualquer direção</label>
+                <label for="txtprop1">Comprimento > 450 mm </label>
             </section>
             <section class="SecComp">
                 <h3>Qual a area danificada pelo dano?</h3>
@@ -1026,12 +1029,12 @@
                 <label for="txtprop1">Área danificada > 40.000 mm²</label>
             </section>
             <section class="SecComp">
-                <h3>Qual aa distancia do dano para o carbono?</h3>
+                <h3>Qual a distancia do dano para o carbono?</h3>
                 <input type="radio"  name="distanC"  class="grupo">
-                <label for="txtprop1">Distância do carbono  ≥ 150 mm² </label>
+                <label for="txtprop1">Distância ≥ 150 mm² </label>
                 <br>
                 <input type="radio"  name="distanC"  class="grupo">
-                <label for="txtprop1">Distância do carbono  < 150 mm²</label>
+                <label for="txtprop1">Distância < 150 mm²</label>
             </section>
 
             <aside>     
@@ -1039,7 +1042,7 @@
             </aside>
         </form>
 
-        <form name="formCamadaRomp" method="phost" class="form">
+        <form name="formCamadaRomp" method="phost" class="form" id="form23">
             <h3>Camada rompida devido lixamento ou remocao de nylon</h3>
         <section class="SecSinais">
                 <h3>Sinais de desenvolvimento do dano?</h3>
@@ -1050,10 +1053,10 @@
         <section class="SecTempo">
             <h3>Qual tempo de operação da pá?</h3>
             <input type="radio"  name="operacao12"  class="grupo">
-            <label for="txttempo">Maior que 1 ano</label>
+            <label for="txttempo">Tempo > 1 ano</label>
             <br>
             <input type="radio"  name="operacao12" class="grupo">
-            <label for="txttempo1">Menor que 1 ano</label>
+            <label for="txttempo1">Tempo < 1 ano</label>
         </section>
         <br>
             <aside>     
@@ -1061,7 +1064,7 @@
             </aside>
         </form>
 
-        <form name="formFurosLamC" method="phost" class="form">
+        <form name="formFurosLamC" method="phost" class="form" id="form24">
             <h3>Furos no laminado - Casca</h3>
             <h4>* Caso não seja possível avaliação, manter como severidade 2</h4>
         <section class="SecSinais">
@@ -1073,10 +1076,10 @@
         <section class="SecTempo">
             <h3>Qual tempo de operação da pá?</h3>
             <input type="radio"  name="operacao13"  class="grupo">
-            <label for="txttempo">Maior que 1 ano</label>
+            <label for="txttempo">Tempo > 1 ano</label>
             <br>
             <input type="radio"  name="operacao13" class="grupo">
-            <label for="txttempo1">Menor que 1 ano</label>
+            <label for="txttempo1">Tempo < 1 ano</label>
         </section>
 
             <aside>     
@@ -1084,7 +1087,7 @@
             </aside>
         </form>
 
-        <form name="formFurosLamBF" method="phost" class="form">
+        <form name="formFurosLamBF" method="phost" class="form" id="form25">
             <h3>Furos - Inserto do BF</h3>
             <section class="SecSinais">
                 <h3>Sinais de desenvolvimento do dano(trincas ou delaminações)?</h3>
@@ -1098,7 +1101,7 @@
         <section class="SecTempo">
             <h3>Qual tempo de operação da pá?</h3>
             <input type="radio"  name="operacao14"  class="grupo">
-            <label for="txttempo">Maior que 1 ano</label>
+            <label for="txttempo">Tempo > 1 ano</label>
             <br>
         </section>
 
@@ -1107,15 +1110,15 @@
             </aside>
         </form>
 
-        <form name="formAusencia" method="phost" class="form">
+        <form name="formAusencia" method="phost" class="form" id="form26">
             <h3>Ausência de camada (Preform) - LE/TE - Casca</h3>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao1"  class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao1"  class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
 
             <section class="SecSinais">
@@ -1131,15 +1134,15 @@
                 </section>
         </form>
 
-        <form name="camadaCont" method="phost" class="form">
+        <form name="camadaCont" method="phost" class="form" id="form27">
             <h3>Camada contaminada</h3>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
                 <input type="radio"  name="operacao2" class="grupo">
-                <label for="txttempo">Maior que 1 ano</label>
+                <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao2" id="txttempo1" class="grupo">
-                <label for="txttempo1">Menor que 1 ano</label>
+                <label for="txttempo1">Tempo < 1 ano</label>
             </section>
 
             <section class="SecSinais">
