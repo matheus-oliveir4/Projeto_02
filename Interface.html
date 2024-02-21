@@ -443,7 +443,7 @@
                 <label for="txtaltura">Tamanho ≤ 100mm</label>
                 <br>
                 <input type="radio"  name="compT"  class="grupo">
-                <label for="txtaltura1">450 mm  ≥ Tamanho </label>
+                <label for="txtaltura1">450 mm  ≥ Tamanho > 100 mm  </label>
                 <br>
                 <input type="radio"  name="compT"  class="grupo">
                 <label for="txtaltura1">Tamanho ≥ 450mm </label>
@@ -469,7 +469,7 @@
             </section>
             <section class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao7"  cl ass="grupo">
+                <input type="radio"  name="operacao7"  class="grupo">
                 <label for="txttempo">Tempo > 1 ano</label>
                 <br>
                 <input type="radio"  name="operacao7" class="grupo">
@@ -509,7 +509,7 @@
             <section class="SecLengD">
                 <h3>Qual o comprimento da bolha?</h3>
                 <input type="radio"  name="compB"  class="grupo" >
-                <label for="txtaltura">Comprimento  ≤ a 500mm</label>
+                <label for="txtaltura">Comprimento  ≤ 500mm</label>
                 <br>
                 <input type="radio"  name="compB"  class="grupo">
                 <label for="txtaltura1">Comprimento > 500mm</label>
@@ -553,7 +553,9 @@
         </form>
         <form name="formCpCascaECol" method="phost" class="form" id="form8">
             <h3>Corpo Estranho - Cascas e área de colagem 
-                (Somente aplicável para laminados infudidos ou áreas de colagem)</h3>
+                (Somente aplicável para laminados infudidos ou áreas de colagem)
+               </h3>
+               <h4> Caso haja sinais de delaminação, aplicar critério de delaminação</h4>
             <section class="SecTempo">
                     <h3>Qual tempo de operação da pá?</h3>
                     <input type="radio"  name="operacao9"  class="grupo">
@@ -571,12 +573,12 @@
                 <label for="txtprop1">Sem sinais</label>
             </section>
             <section class="SecMat">
-                <h3>O tipo do material é não Metálicos e outros materias condutivos?</h3>
+                <h3>Qual tipo de material?</h3>
                 <input type="radio"  name="mat"  class="grupo">
-                <label for="txtprop">Sim</label>
+                <label for="txtprop">Não Metálicos e outros materias condutivos </label>
                 <br>
                 <input type="radio"  name="mat"  class="grupo">
-                <label for="txtprop1">Não</label>
+                <label for="txtprop1">Metálicos e outros materias condutivos</label>
             </section>
             <section class="SecTam">
                 <h3>Qual tamanho do material?</h3>
@@ -679,9 +681,6 @@
                 <h3>Qual o comprimento da trinca?</h3>
                 <input type="radio"  name="largTc"  class="grupo" >
                 <label for="txtaltura">Comprimento < 300 mm</label>
-                <br>
-                <input type="radio"  name="largTc"  class="grupo">
-                <label for="txtaltura1"> 500 mm ≥ Comprimento ≥ 300 mm </label>
                 <br>
                 <input type="radio"  name="largTc"  class="grupo">
                 <label for="txtaltura1">Comprimento > 500 mm</label>

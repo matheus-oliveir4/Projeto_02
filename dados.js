@@ -948,7 +948,7 @@ function selected(value){
         selectElement.selectedIndex = indiceOpition4
         selectElement1.selectedIndex = indiceOpition4
         form.style.display = 'none';} 
-    else if(ftempo1[0].checked && ftam1[0].checked && fprop1[0].checked ){
+    else if(ftempo1[0].checked && ftam1[0].checked && fprop1[1].checked ){
           selectElement.selectedIndex = indiceOpition3 
           selectElement1.selectedIndex = indiceOpition3 
           form.style.display = 'none';} 
@@ -957,6 +957,10 @@ function selected(value){
           selectElement1.selectedIndex = indiceOpition2
           form.style.display = 'none';}
     else if(faltura1[0].checked && fprop1[1].checked){
+      selectElement.selectedIndex = indiceOpition1
+      selectElement1.selectedIndex = indiceOpition1
+      form.style.display = 'none';} 
+    else if(faltura1[1].checked && fprop1[1].checked){
       selectElement.selectedIndex = indiceOpition1
       selectElement1.selectedIndex = indiceOpition1
       form.style.display = 'none';} 
@@ -1201,7 +1205,7 @@ function carregar8(){
   var ftempo = document.getElementsByName('operacao9')
   var fmat = document.getElementsByName('mat')
 
-  if(fmat[0].checked){
+  if(fmat[1].checked){
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
     form.style.display = 'none';}
@@ -1279,14 +1283,10 @@ function carregar12(){
   var form = document.getElementById('form12')
  var compriT = document.getElementsByName('largTc')
 
-if(compriT[2].checked){
+if(compriT[1].checked){
   selectElement.selectedIndex = indiceOpition6
   selectElement1.selectedIndex = indiceOpition6
   form.style.display = 'none';}
-else if (compriT[1].checked){
-    selectElement.selectedIndex = indiceOpition5
-    selectElement1.selectedIndex = indiceOpition5
-    form.style.display = 'none';}
 else if(compriT[0].checked){
   selectElement.selectedIndex = indiceOpition4
   selectElement1.selectedIndex = indiceOpition4
