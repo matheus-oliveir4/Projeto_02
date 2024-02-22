@@ -1424,11 +1424,18 @@ else if(larg[0].checked && comp[0].checked){
 function carregar18(){
   var form = document.getElementById('form18')
   var mat = document.getElementsByName('MatSol')
+  var mat1 = document.getElementsByName('MatMet')
+  var mat2 = document.getElementsByName('MatFragSol')
 
-  if(mat[0].checked || mat[1].checked){
+  if(mat[0].checked || mat1[0].checked){
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
     form.style.display = 'none';
+  } else if( mat2[0].checked){
+    selectElement.selectedIndex = indiceOpition1
+    selectElement1.selectedIndex = indiceOpition1
+    form.style.display = 'none';
+
   }
 }
 /*Condicionais para Delaminações - Cascas e Almas	*/
@@ -1439,11 +1446,16 @@ function carregar19(){
 
 
 
-  if(prop[1].checked && tam[1].checked){
+  if(tam[1].checked){
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     form.style.display = 'none';
-  } else if(tam[2].checked){
+  } else if(tam[3].checked && prop[1].checked){
+    selectElement.selectedIndex = indiceOpition6
+    selectElement1.selectedIndex = indiceOpition6
+    form.style.display = 'none';
+  } 
+  else if(tam[2].checked){
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     form.style.display = 'none';}
