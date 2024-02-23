@@ -967,13 +967,13 @@
 
             <section class="SecSinais">
                     <h3>Situação do dano?</h3>
-                    <input type="radio"  name="propagação16"  class="grupo" >
+                    <input type="radio"  name="1propagação16"  class="grupo" >
                     <label for="txtprop1">Dano sem propagação de trinca</label>
                     <br>
-                    <input type="radio"  name="propagação16"  class="grupo">
+                    <input type="radio"  name="2propagação16"  class="grupo">
                     <label for="txtprop1">Dano em ambos os lados ou R na mesma posição</label>
                     <br>
-                    <input type="radio"  name="propagação16"  class="grupo">
+                    <input type="radio"  name="3propagação16"  class="grupo">
                     <label for="txtprop1">Danos associados como trincas ou descolamentos</label>
             </section>
             <aside>     
@@ -1077,6 +1077,17 @@
         <form name="formFurosLamC" method="phost" class="form" id="form24">
             <h3>Furos no laminado - Casca</h3>
             <h4>* Caso não seja possível avaliação, manter como severidade 2</h4>
+            <section class="SecDiam" >
+                <h3>Qual a situação dos furos?</h3>
+                <input type="radio"  name="diam1"  class="grupo" >
+                <label for="txtaltura">Diâmetro do furo: ≤25 mm  </label>
+                <br>
+                <input type="radio"  name="diam2"  class="grupo">
+                <label for="txtaltura1">Distância entre os furos ≥ 100 mm </label>
+                <br>
+                <input type="radio"  name="diam3"  class="grupo">
+                <label for="txtaltura1">Distância entre o furo e o carbono ≥ Diâmetro do furo</label>
+            </section>
         <section class="SecSinais">
                 <h3>Sinais de desenvolvimento do dano(trincas ou delaminações)?</h3>
                 <input type="radio"  name="propagação18"  class="grupo">
@@ -1151,7 +1162,7 @@
                 <input type="radio"  name="operacao2" class="grupo">
                 <label for="txttempo">Tempo > 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao2" id="txttempo1" class="grupo">
+                <input type="radio"  name="operacao2" class="grupo">
                 <label for="txttempo1">Tempo < 1 ano</label>
             </section>
 

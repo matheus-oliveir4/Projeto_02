@@ -1446,7 +1446,7 @@ function carregar19(){
 
 
 
-  if(tam[1].checked){
+  if(tam[2].checked){
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     form.style.display = 'none';
@@ -1473,14 +1473,16 @@ function carregar19(){
 function carregar20(){
   var form = document.getElementById('form20')
   var tempo = document.getElementsByName('operacao11')
-  var prop = document.getElementsByName('propagação16')
+  var prop1 = document.getElementsByName('1propagação16')
+  var prop2 = document.getElementsByName('2propagação16')
+  var prop3 = document.getElementsByName('3propagação16')
   var comp = document.getElementsByName('compDC1')
   
-  if(prop[2].checked){
+  if(prop3[0].checked){
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
     form.style.display = 'none';}
-  else if(prop[1].checked || comp[1].checked){
+  else if(prop2[0].checked || comp[1].checked){
       selectElement.selectedIndex = indiceOpition5
       selectElement1.selectedIndex = indiceOpition5
       form.style.display = 'none';} 
@@ -1488,7 +1490,7 @@ function carregar20(){
         selectElement.selectedIndex = indiceOpition4
         selectElement1.selectedIndex = indiceOpition4
         form.style.display = 'none';} 
-  else if(prop[0].checked && tempo[0].checked){
+  else if(prop1[0].checked && tempo[0].checked){
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
     form.style.display = 'none';
@@ -1526,7 +1528,7 @@ function carregar22(){
   
   if(danoR[0].checked){
     selectElement.selectedIndex = indiceOpition6
-    selectElement1.selectedIndex = indiceOpition
+    selectElement1.selectedIndex = indiceOpition6
     form.style.display = 'none';
   } else if( compRaio[2].checked && danoR[1].checked){
     selectElement.selectedIndex = indiceOpition6
@@ -1573,6 +1575,9 @@ function carregar24(){
   var form = document.getElementById('form24')
   var tempo = document.getElementsByName('operacao13')
   var prop = document.getElementsByName('propagação18')
+  var diam1 = document.getElementsByName('diam1')
+  var diam2 = document.getElementsByName('diam2')
+  var diam3 = document.getElementsByName('diam3')
  if(tempo[1].checked && prop[0].checked){
   selectElement.selectedIndex = indiceOpition4
   selectElement1.selectedIndex = indiceOpition4
@@ -1581,8 +1586,11 @@ function carregar24(){
   selectElement.selectedIndex = indiceOpition3
   selectElement1.selectedIndex = indiceOpition3
   form.style.display = 'none';
- }
-}
+ } else if(diam1[0].checked && diam2[0].checked && diam3[0].checked){
+  selectElement.selectedIndex = indiceOpition1
+  selectElement1.selectedIndex = indiceOpition1
+
+}}
 
 
 /*Condicionais para Furos no laminado - Inserto do BF	*/
@@ -1616,12 +1624,12 @@ function carregar27(){
   var form = document.getElementById('form27')
   var fprop = document.getElementsByName('propagacao2')
   var ftempo = document.getElementsByName('operacao2')
-  if(ftempo[0].checked && fprop[0]){
+  if(ftempo[1].checked || fprop[0].checked){
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
-  else if(ftempo[0].checked && fprop[1]){
+  else if(ftempo[0].checked && fprop[1].checked){
       selectElement.selectedIndex = indiceOpition3
       selectElement1.selectedIndex = indiceOpition3
       form.style.display = 'none';}
