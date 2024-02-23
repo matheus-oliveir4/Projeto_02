@@ -1,6 +1,10 @@
 
    body{
-    background-color: #0040898c;
+    background-color: #044a9b;
+    background-image: url(img/Imagem2.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-origin: inherit;
    }
    #open-modal {
         background-color: #007bff;
@@ -33,7 +37,7 @@
         top: 0%;
         right: 0%;
         z-index: 10;
-        background-color: #beb8b8;
+        background-color: #ffffff;
         width: 360px;
         height: 94%;
         margin: 5px;
@@ -175,9 +179,9 @@
         flex-direction: column;
         position: fixed;
         top: 0%;
-        right: 21%;
+        right: 24%;
         z-index: 10;
-        background-color: #00408979;
+        background-color: #ffffffd5;
         width: 360px;
         height: 94%;
         margin: 0;
