@@ -135,15 +135,15 @@
                         <input class="form-control-new" type="number" name="width" id="width" placeholder="300">
                     </div>
                 </div>
-                {{-- INPUTS HIDDEN --}}
-                {{-- <input type="hidden" name="section" value="{{ $region }}"> --}}
+                
+                 <input type="hidden" name="section" value="{{ $region }}"> 
                 <input type="hidden" name="windblade_id" value="{{ $blade->windblade_id ?? 0 }}">
                 <input type="hidden" name="workorder_id" value="{{ $blade->workorder_id ?? 0 }}">
                 <input type="hidden" name="gallery_id" id="gallery_id">
                 <input type="hidden" name="image_url" id="image_url">
                 <input type="hidden" name="positions" id="positions">
                 <input type="hidden" name="method" id="method">
-                {{-- INPUTS HIDDEN --}}
+                
                 <div class="form-group-new">
                     <div class="col-sm-12">
                         <label for="comment">Comment</label>
