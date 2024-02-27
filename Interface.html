@@ -174,10 +174,17 @@
                     <div class="col-sm-12">
                         <label for="recommendation_id">Recommendation</label>
                         <select class="new-select" name="recommendation_id" id="recommendation_id" required>
-                            <option value="" selecte d>Select</option>
-
-                            <option value="{{ $recommendation->id }}">{{ $recommendation->name }}</option>
-                            @endforeach
+                            <option selected>Select</option>
+                            <option value="14">N/A</option>
+                            <option value="15">Monitoring at the next inspection opportunity</option>
+                            <option value="16">Monitoring within 12 months period</option>
+                            <option value="17">Repair within 6 months</option>
+                            <option value="18">Repair within 3 months</option>
+                            <option value="19">Stop the turbine and repair</option>
+                            <option value="20">Immediate clean up</option>
+                            <option value="21">Repair within 1 week</option>
+                            
+                            
                         </select>
                     </div>
                 </div>
@@ -1238,8 +1245,8 @@
             </aside>
         </section>
     </form>
-    <script src="dados01.js"></script>
-    <script src="dados02.js"></script>
+    <script src="condicionais02.js"></script>
+    <script src="condicionais01.js"></script>
     <script src="selected.js"></script>
 </body>
 

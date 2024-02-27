@@ -1,15 +1,19 @@
 
-/*Automatização das Layer's propostas*/
+/*Automatização das Layer's, severity e recomendacion propostas*/
 var selectElement = document.getElementById("layer_id")
 var selectElement1 = document.getElementById('severity')
+var selectElement2 = document.getElementById("recommendation_id")
+
+
 var indiceOpition0 = 0;
-var indiceOpition1 = 1; /*no Issues / sev0*/
-var indiceOpition2 = 2; /*Light Structural / sev1*/
-var indiceOpition3 = 3; /*Minor Structural / sev2*/
-var indiceOpition4 = 4;  /*Medium Structural / sev3*/
-var indiceOpition5 = 5; /*High Structural / sev4*/
-var indiceOpition6 = 6; /*Critical Structural sev5*/
-/*Automatização das severidades propostas*/
+var indiceOpition1 = 1; /*no Issues / sev0 / N/A*/
+var indiceOpition2 = 2; /*Light Structural / sev1 / Monitoring at the next inspection opportunity */
+var indiceOpition3 = 3; /*Minor Structural / sev2 / Monitoring within 12 months period*/
+var indiceOpition4 = 4;  /*Medium Structural / sev / Repair within 6 months */
+var indiceOpition5 = 5; /*High Structural / sev4 / Repair within 3 months*/
+var indiceOpition6 = 6; /*Critical Structural / sev5 / Stop the turbine and repair*/
+var indiceOpition7 = 7; /*Immediate clean up*/
+var indiceOpition8 = 8; /*Repair within 1 week*/
 
 /*Condicionais para Rugas - Longitudinal*/
 function carregar0() {
@@ -23,42 +27,53 @@ function carregar0() {
   if (fprop1[0].checked && ftam1[1].checked || fluz1[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
+
     form.style.display = 'none';
   }
 
   else if (fprop1[0].checked && ftam1[0].checked && fluz1[1].checked) {
     selectElement1.selectedIndex = indiceOpition5
     selectElement.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fprop1[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
+    
     form.style.display = 'none';
   }
   else if (ftempo1[1].checked && ftam1[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
+   
     form.style.display = 'none';
   }
   else if (ftempo1[0].checked && ftam1[0].checked && fprop1[1].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3
     form.style.display = 'none';
   }
   else if (ftempo1[0].checked && fprop1[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
     form.style.display = 'none';
   }
   else if (faltura1[0].checked && fprop1[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    selectElement2.selectedIndex = indiceOpition1
     form.style.display = 'none';
   }
   else if (faltura1[1].checked && fprop1[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    selectElement2.selectedIndex = indiceOpition1
     form.style.display = 'none';
   }
 }
@@ -75,36 +90,43 @@ function carregar1() {
   if (fprop[0].checked && ftam[1].checked || fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
-    form.style.display = 'none';
+    selectElement2.selectedIndex = indiceOpition6
   }
   else if (fprop[0].checked && ftam[0].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (ftempo[1].checked && ftam[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && ftam[0].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3 
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
+    
     form.style.display = 'none';
   }
   else if (faltura[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    selectElement2.selectedIndex = indiceOpition1
 
     form.style.display = 'none';
   }
@@ -123,31 +145,37 @@ function carregar2() {
   if (fprop[0].checked && ftam[2].checked || fcore[1].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fprop[0].checked && ftam[1].checked && fcore[0].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (ftempo[1].checked && ftam[1].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && ftam[1].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3 
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
     form.style.display = 'none';
   }
   else if (fh[0].checked || faltura[0].checked && ftam[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    selectElement2.selectedIndex = indiceOpition1
     form.style.display = 'none';
   }
 }
@@ -166,21 +194,26 @@ function carregar3() {
   if (fluz[0].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fprop[0].checked && fdelam[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
+
     form.style.display = 'none';
   }
   else if (fgap[0].checked && fresina[0].checked && fcolisao[1].checked) {
     selectElement.selectedIndex = indiceOpition1
     selectElement1.selectedIndex = indiceOpition1
+    
     form.style.display = 'none';
   }
 }
@@ -197,26 +230,31 @@ function carregar4() {
   if (fprop[0].checked && fcompri[1].checked || fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fprop[0].checked && fcompri[0].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (ftempo[1].checked && fcompri[0].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fcompri[0].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fcompri[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
     form.style.display = 'none';
   }
   else if (fHD[0].checked && fprop[1].checked) {
@@ -234,16 +272,19 @@ function carregar5() {
   if (fcompri[2].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fcompri[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fcompri[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
 }
@@ -259,11 +300,13 @@ function carregar6() {
   if (ftempo[1].checked && fcompri[1]) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[0].checked && fcompri[1].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
     form.style.display = 'none';
   }
   else if (fcompri[0].checked) {
@@ -286,27 +329,38 @@ function carregar7() {
   if (fprop1[0].checked && fcompri[1].checked || fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fprop1[0].checked && fcompri[0].checked && fluzP[0]) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fcompri[0].checked && fprop[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[1].checked && fcompri[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (ftempo[0] && fcompri[0] && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3
     form.style.display = 'none';
+  }
+  else if(ftempo[0].checked && fprop[1].checked){
+    selectElement.selectedIndex = indiceOpition2
+    selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
+    
   }
   else if (ftamB[0].checked || ftamB[1].checked) {
     selectElement.selectedIndex = indiceOpition1
@@ -326,21 +380,25 @@ function carregar8() {
   if (fmat[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fmat[0].checked && fprop[1].checked && ftam[1].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (fmat[0].checked && ftempo[0].checked && fprop[0].checked && ftam[0].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3
     form.style.display = 'none';
   }
   else if (fmat[0].checked && ftempo[0].checked && fprop[1].checked) {
     selectElement.selectedIndex = indiceOpition2
     selectElement1.selectedIndex = indiceOpition2
+    selectElement2.selectedIndex = indiceOpition2
     form.style.display = 'none';
   }
 }
@@ -353,16 +411,19 @@ function carregar9() {
   if (fcompri[2].checked && fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fcompri[1].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fcompri[0].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
 }
@@ -376,16 +437,19 @@ function carregar10() {
   if (fcompri[2].checked || fluz[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (fcompri[1].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (fcompri[0].checked && fluz[1].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
 }
@@ -399,11 +463,13 @@ function carregar11() {
   if (flarg[1].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (flarg[0].checked && fdano[0].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3 
     form.style.display = 'none';
   }
 }
@@ -415,14 +481,16 @@ function carregar12() {
   if (compriT[1].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   }
   else if (compriT[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
   }
 }
-/*Condicionais paraDescolamentos  - Danos na alma/T-pultrudado*/
+/*Condicionais para Descolamentos  - Danos na alma/T-pultrudado*/
 
 function carregar13() {
   var form = document.getElementById('form13')
@@ -433,20 +501,24 @@ function carregar13() {
   if (desloc[0].checked) {
     selectElement.selectedIndex = indiceOpition6
     selectElement1.selectedIndex = indiceOpition6
+    selectElement2.selectedIndex = indiceOpition6
     form.style.display = 'none';
   } else if (prop[1].checked && tam[1].checked) {
     selectElement.selectedIndex = indiceOpition5
     selectElement1.selectedIndex = indiceOpition5
+    selectElement2.selectedIndex = indiceOpition5
     form.style.display = 'none';
   }
   else if (prop[1].checked && tam[0].checked) {
     selectElement.selectedIndex = indiceOpition4
     selectElement1.selectedIndex = indiceOpition4
+    selectElement2.selectedIndex = indiceOpition4
     form.style.display = 'none';
   }
   else if (prop[0].checked && tempo[0].checked) {
     selectElement.selectedIndex = indiceOpition3
     selectElement1.selectedIndex = indiceOpition3
+    selectElement2.selectedIndex = indiceOpition3
     form.style.display = 'none';
   }
 }
